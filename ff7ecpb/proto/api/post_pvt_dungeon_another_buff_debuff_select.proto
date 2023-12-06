@@ -1,0 +1,13 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtDungeonAnotherBuffDebuffSelectRequest {
+	optional int64 dungeon_buff_debuff_select_id = 1 [(rules).int64.gt = 0];
+	optional int64 select_idx = 2 [(rules).int64.lt = 3, (rules).int64.gte = 0];
+}
+
+message PostPvtDungeonAnotherBuffDebuffSelectResponse {
+}

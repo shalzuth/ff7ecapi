@@ -1,0 +1,16 @@
+import "enums/enums_er_gen.proto";
+import "entity/common.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtEventClashClearListRequest {
+	optional int64 event_base_id = 1 [(rules).int64.gt = 0];
+	optional .enums.EventClashBattleGroupType event_clash_battle_group_type = 2 [default = EventClashBattleGroupType_None, (rules).enum.not_in = 0];
+}
+
+message PostPvtEventClashClearListResponse {
+	repeated .entity.ClashClearUserSimpleInfo clash_clear_user_simple_infos = 1;
+}

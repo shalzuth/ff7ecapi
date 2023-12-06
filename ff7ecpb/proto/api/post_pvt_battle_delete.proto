@@ -1,0 +1,9 @@
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtBattleDeleteRequest {
+}
+
+message PostPvtBattleDeleteResponse {
+}

@@ -1,0 +1,15 @@
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtNoticeCheckRequest {
+}
+
+message PostPvtNoticeCheckResponse {
+	optional bool is_receive_friend_request = 1;
+	repeated .api.RoomInviteReceiveNotice room_invite_receives = 2;
+}
+
+message RoomInviteReceiveNotice {
+	optional string sender_user_name = 1;
+}

@@ -1,0 +1,15 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtStorePurchaseAndroidUpdateRequest {
+	optional int64 bridge_transaction_id = 1 [(rules).int64.gt = 0];
+	optional string purchase_data = 2 [(rules).string.min_len = 1, (rules).string.max_len = 4096];
+	optional string data_signature = 3 [(rules).string.min_len = 1, (rules).string.max_len = 4096];
+}
+
+message PostPvtStorePurchaseAndroidUpdateResponse {
+	optional int64 shop_item_id = 1;
+}

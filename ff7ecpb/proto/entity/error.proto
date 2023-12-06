@@ -1,0 +1,14 @@
+import "enums/enums_er_gen.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message ErrorResponse {
+	optional int32 code = 1;
+	optional .enums.ErrorControlType control_type = 2 [default = ErrorControlType_None];
+	optional string message = 3;
+	optional bool is_display_code = 4;
+	optional int64 client_language_id = 5;
+	optional int64 client_title_language_id = 6;
+}

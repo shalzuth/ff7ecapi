@@ -1,0 +1,10 @@
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtMatchSessionRequest {
+}
+
+message PostPvtMatchSessionResponse {
+	optional string match_token = 1;
+}

@@ -1,0 +1,17 @@
+import "validate/validate.proto";
+import "enums/enums_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtMissionProgressRequest {
+	optional .enums.MissionType mission_type = 1 [default = MissionType_None, (rules).enum.not_in = 0];
+	optional int64 target_id1 = 2 [(rules).int64.gte = 0];
+	optional int64 target_id2 = 3 [(rules).int64.gte = 0];
+	optional int64 target_id3 = 4 [(rules).int64.gte = 0];
+	optional int64 count = 5 [(rules).int64.gte = 0];
+}
+
+message PostPvtMissionProgressResponse {
+}

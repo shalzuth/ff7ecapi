@@ -1,0 +1,25 @@
+import "validate/validate.proto";
+import "enums/enums_er_gen.proto";
+import "entity/user_weapon_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtWeaponUpgradeRequest {
+	message IngredientItemMapEntry {
+		optional int64 key = 1;
+		optional int64 value = 2;
+	}
+
+	optional int64 weapon_id = 1 [(rules).int64.gt = 0];
+	optional .enums.WeaponUpgradeType weapon_upgrade_type = 2 [default = WeaponUpgradeType_None, (rules).enum.not_in = 0];
+	optional int64 upgrade_count = 3 [(rules).int64.gt = 0];
+	repeated .api.PostPvtWeaponUpgradeRequest.IngredientItemMapEntry ingredient_item_map = 4 [(rules).map.values.int64.gt = 0];
+}
+
+message PostPvtWeaponUpgradeResponse {
+	optional int64 consumption_gil = 1;
+	optional .entity.UserWeapon before_user_weapon = 2;
+	optional .entity.UserWeapon after_user_weapon = 3;
+}

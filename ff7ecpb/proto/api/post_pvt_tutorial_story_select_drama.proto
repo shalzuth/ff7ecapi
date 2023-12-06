@@ -1,0 +1,17 @@
+import "validate/validate.proto";
+import "api/post_pvt_story_select_drama.proto";
+import "api/post_pvt_tutorial_progress_step.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtTutorialStorySelectDramaRequest {
+	optional .api.PostPvtStorySelectDramaRequest story_select_drama_request = 1 [(rules).message.required = true];
+	optional .api.PostPvtTutorialProgressStepRequest tutorial_progress_step_request = 2 [(rules).message.required = true];
+}
+
+message PostPvtTutorialStorySelectDramaResponse {
+	optional .api.PostPvtStorySelectDramaResponse story_select_drama_response = 1;
+	optional .api.PostPvtTutorialProgressStepResponse tutorial_progress_step_response = 2;
+}

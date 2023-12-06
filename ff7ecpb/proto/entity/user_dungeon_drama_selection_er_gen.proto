@@ -1,0 +1,12 @@
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserDungeonDramaSelection {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 dungeon_drama_selection_id = 2 [(client).primary = true, (client).primary_key_order = 1, (client).relation_table_name = "m_dungeon_drama_selection", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 selection_idx = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 selected_idx_flag = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

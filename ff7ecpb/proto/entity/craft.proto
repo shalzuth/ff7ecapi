@@ -1,0 +1,8 @@
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message CraftResult {
+	optional int64 user_craft_idx = 1;
+	optional int64 target_id = 2;
+}

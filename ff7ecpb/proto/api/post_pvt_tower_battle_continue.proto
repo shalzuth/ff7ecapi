@@ -1,0 +1,13 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtTowerBattleContinueRequest {
+	optional int64 tower_floor_id = 1 [(rules).int64.gt = 0];
+	optional int64 entry_count = 2 [(rules).int64.gt = 0];
+}
+
+message PostPvtTowerBattleContinueResponse {
+}

@@ -1,0 +1,14 @@
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserLoginBonus {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 login_bonus_id = 2 [(client).primary = true, (client).primary_key_order = 1, (client).relation_table_name = "m_login_bonus", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 sheet_count = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 login_count = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_login_count = 5 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 last_get_date = 6 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

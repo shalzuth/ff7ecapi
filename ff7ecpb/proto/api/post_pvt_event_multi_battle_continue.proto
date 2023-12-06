@@ -1,0 +1,10 @@
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtEventMultiBattleContinueRequest {
+	optional int64 entry_count = 2;
+}
+
+message PostPvtEventMultiBattleContinueResponse {
+}

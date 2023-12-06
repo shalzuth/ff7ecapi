@@ -1,0 +1,17 @@
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserSeasonPass {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 season_pass_id = 2 [(client).primary = true, (client).primary_key_order = 1, (client).relation_table_name = "m_season_pass", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 progress_point = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 received_step_idx_flags0 = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 received_step_idx_flags1 = 5 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 extra_received_step_idx_flags0 = 6 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 extra_received_step_idx_flags1 = 7 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 extra_received_step_idx_flags2 = 8 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 extra_received_step_idx_flags3 = 9 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

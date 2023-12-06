@@ -1,0 +1,20 @@
+import "validate/validate.proto";
+import "enums/enums_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtRoomPrivateEnterRequest {
+	optional int64 room_no = 1 [(rules).int64.gt = 0];
+	optional .enums.StaminaBoostType stamina_boost_type = 2 [default = StaminaBoostType_None];
+}
+
+message PostPvtRoomPrivateEnterResponse {
+	optional .enums.MatchingTargetType matching_target_type = 1 [default = MatchingTargetType_None, (rules).enum.not_in = 0];
+	optional int64 target_id = 2 [(rules).int64.gt = 0];
+	optional string host = 3;
+	optional int64 port = 4;
+	optional string player_session_id = 5;
+	optional .enums.MultiRoomResponseType response_type = 6 [default = MultiRoomResponseType_None];
+}

@@ -1,0 +1,19 @@
+import "validate/validate.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message Log {
+	optional .entity.LogUserConfigUpdate log_user_config_update = 78302143;
+}
+
+message ConfigUpdateInfo {
+	optional string key = 120147377;
+	optional string value = 256440141;
+}
+
+message LogUserConfigUpdate {
+	optional string app_env = 298039499;
+	repeated .entity.ConfigUpdateInfo config_update_info = 410127509 [(rules).repeated.min_items = 1, (rules).repeated.max_items = 15];
+}

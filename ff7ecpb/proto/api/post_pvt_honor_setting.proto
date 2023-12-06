@@ -1,0 +1,15 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtHonorSettingRequest {
+	optional int64 top_honor_id = 1 [(rules).int64.gte = 0];
+	optional int64 bottom_honor_id = 2 [(rules).int64.gte = 0];
+	optional int64 background_honor_id = 3 [(rules).int64.gte = 0];
+	optional int64 icon_honor_id = 4 [(rules).int64.gte = 0];
+}
+
+message PostPvtHonorSettingResponse {
+}

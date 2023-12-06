@@ -1,0 +1,15 @@
+import "validate/validate.proto";
+import "entity/common.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtTutorialGachaDrawRequest {
+	optional int64 step = 2 [(rules).int64.gt = 0];
+}
+
+message PostPvtTutorialGachaDrawResponse {
+	repeated .entity.RewardInfo gacha_result_list = 1;
+	optional int64 gacha_direction_lot_id = 2;
+}

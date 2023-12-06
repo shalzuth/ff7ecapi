@@ -1,0 +1,22 @@
+import "enums/enums_er_gen.proto";
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserBattleEntry {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 entry_count = 2 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 battle_id = 3 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_battle", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional .enums.BattleType battle_type = 4 [default = BattleType_None];
+	optional int64 content_id = 5 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_solo_area_battle", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional .enums.BattleProgressType battle_progress_type = 6 [default = BattleProgressType_None];
+	optional int64 continue_count = 7 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional bool is_boost = 8 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional .enums.StaminaBoostType stamina_boost_type = 9 [default = StaminaBoostType_None];
+	optional int64 party_id = 11 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_party", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional string app_version = 12 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional string master_version = 13 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 start_datetime = 14 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

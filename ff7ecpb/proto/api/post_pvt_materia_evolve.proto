@@ -1,0 +1,16 @@
+import "validate/validate.proto";
+import "entity/user_materia_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtMateriaEvolveRequest {
+	optional int64 user_materia_id = 1 [(rules).int64.gt = 0];
+}
+
+message PostPvtMateriaEvolveResponse {
+	optional int64 consumption_gil = 1;
+	optional .entity.UserMateria before_user_materia = 2;
+	optional .entity.UserMateria after_user_materia = 3;
+}

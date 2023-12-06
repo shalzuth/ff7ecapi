@@ -1,0 +1,22 @@
+import "enums/enums_er_gen.proto";
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserAnotherDungeon {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 another_dungeon_id = 2 [(client).primary = true, (client).primary_key_order = 1, (client).relation_table_name = "m_another_dungeon", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional .enums.DungeonRankType high_rank_type = 3 [default = DungeonRankType_None];
+	optional int64 high_score = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 win_count = 5 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 achieved_score_option_idx_flags0 = 6 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 used_character_id0 = 7 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 used_character_id1 = 8 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 used_character_id2 = 9 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional bool achieved_dungeon_mission_id0 = 10 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional bool achieved_dungeon_mission_id1 = 11 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional bool achieved_dungeon_mission_id2 = 12 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 last_update_score_datetime = 13 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

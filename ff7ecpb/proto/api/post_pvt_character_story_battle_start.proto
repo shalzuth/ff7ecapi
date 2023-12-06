@@ -1,0 +1,21 @@
+import "entity/battle.proto";
+import "entity/party.proto";
+import "validate/validate.proto";
+import "enums/enums_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtCharacterStoryBattleStartRequest {
+	optional int64 battle_id = 1 [(rules).int64.gt = 0];
+	optional int64 episode_id = 4 [(rules).int64.gt = 0];
+	optional int64 party_id = 5 [(rules).int64.gt = 0];
+	optional .entity.CommonBattleStartInput battle_start_input = 6;
+	optional .entity.PartyInfo party_info = 7;
+}
+
+message PostPvtCharacterStoryBattleStartResponse {
+	repeated .entity.BattleWaveInfo battle_wave_infos = 1 [(rules).repeated.min_items = 1];
+	optional int64 entry_count = 2;
+}

@@ -1,0 +1,14 @@
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserDailyRewardGroup {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 daily_reward_group_id = 2 [(client).primary = true, (client).primary_key_order = 1];
+	optional int64 start_datetime = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 last_obtain_datetime = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 message_detail_value0 = 5 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 finish_datetime = 6 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

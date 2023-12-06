@@ -1,0 +1,22 @@
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserMateriaCollection {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 materia_evolve_id = 2 [(client).primary = true, (client).primary_key_order = 1, (client).relation_table_name = "m_materia_evolve", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 quality_one_obtain_count = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 quality_two_obtain_count = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 quality_three_obtain_count = 5 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 quality_four_obtain_count = 6 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 quality_five_obtain_count = 7 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 quality_one_craft_count = 8 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 quality_two_craft_count = 9 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 quality_three_craft_count = 10 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 quality_four_craft_count = 11 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 quality_five_craft_count = 12 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 enhance_count = 13 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 max_level = 14 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

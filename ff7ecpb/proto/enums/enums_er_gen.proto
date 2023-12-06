@@ -1,0 +1,2405 @@
+package enums;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/enums";
+
+enum AgeCategoryType {
+	AgeCategoryType_None = 0;
+	AgeCategoryType_LT16 = 1;
+	AgeCategoryType_LT18 = 2;
+	AgeCategoryType_GTE18 = 3;
+}
+
+enum AnnouncementDisplayType {
+	AnnouncementDisplayType_Public = 0;
+	AnnouncementDisplayType_Private = 1;
+}
+
+enum AnnouncementType {
+	AnnouncementType_None = 0;
+	AnnouncementType_Event = 1;
+	AnnouncementType_Gacha = 2;
+	AnnouncementType_Campaign = 3;
+	AnnouncementType_Sale = 4;
+	AnnouncementType_Info = 5;
+	AnnouncementType_Bug = 6;
+	AnnouncementType_Update = 7;
+	AnnouncementType_Maintenance = 8;
+	AnnouncementType_DataUpdate = 9;
+	AnnouncementType_ImportantInfo = 10;
+	AnnouncementType_Topic = 11;
+}
+
+enum AnotherAreaType {
+	AnotherAreaType_None = 0;
+	AnotherAreaType_Another = 1;
+	AnotherAreaType_ScoreDungeon = 2;
+	AnotherAreaType_Crisis = 3;
+}
+
+enum AnotherBattleType {
+	AnotherBattleType_None = 0;
+	AnotherBattleType_Normal = 1;
+	AnotherBattleType_EnhanceBoss = 2;
+	AnotherBattleType_DungeonEnd = 3;
+	AnotherBattleType_ExDungeonEnd = 4;
+	AnotherBattleType_NoEnhanceBoss = 5;
+}
+
+enum AnotherDungeonBuffDeBuffType {
+	AnotherDungeonBuffDeBuffType_None = 0;
+	AnotherDungeonBuffDeBuffType_PhysicalAttack = 1;
+	AnotherDungeonBuffDeBuffType_MagicalAttack = 2;
+	AnotherDungeonBuffDeBuffType_PhysicalDefense = 3;
+	AnotherDungeonBuffDeBuffType_MagicalDefense = 4;
+	AnotherDungeonBuffDeBuffType_HealingPower = 5;
+	AnotherDungeonBuffDeBuffType_CriticalRate = 6;
+	AnotherDungeonBuffDeBuffType_CriticalPower = 7;
+	AnotherDungeonBuffDeBuffType_ResistElement = 8;
+	AnotherDungeonBuffDeBuffType_ResistStatusCondition = 9;
+	AnotherDungeonBuffDeBuffType_ResistStatusConditionDuration = 10;
+	AnotherDungeonBuffDeBuffType_ResistStatusConditionAdditiveDuration = 11;
+	AnotherDungeonBuffDeBuffType_Score = 17;
+	AnotherDungeonBuffDeBuffType_ResistDeBuff = 18;
+	AnotherDungeonBuffDeBuffType_ResistDeBuffDuration = 19;
+	AnotherDungeonBuffDeBuffType_ResistDeBuffAdditiveDuration = 20;
+	AnotherDungeonBuffDeBuffType_MaxHpDamageRate = 21;
+	AnotherDungeonBuffDeBuffType_ElementDamage = 22;
+	AnotherDungeonBuffDeBuffType_SkillBuffDeBuffDuration = 23;
+	AnotherDungeonBuffDeBuffType_SkillBuffDeBuffAdditiveDuration = 24;
+}
+
+enum AnotherDungeonDifficultyType {
+	AnotherDungeonDifficultyType_None = 0;
+	AnotherDungeonDifficultyType_Normal = 1;
+	AnotherDungeonDifficultyType_Hard = 2;
+	AnotherDungeonDifficultyType_VeryHard = 3;
+	AnotherDungeonDifficultyType_Extra = 4;
+}
+
+enum AreaBattleDifficultyType {
+	AreaBattleDifficultyType_None = 0;
+	AreaBattleDifficultyType_Normal = 1;
+	AreaBattleDifficultyType_Hard = 2;
+	AreaBattleDifficultyType_VeryHard = 3;
+}
+
+enum AreaBattleDisplayType {
+	AreaBattleDisplayType_None = 0;
+	AreaBattleDisplayType_Normal = 1;
+	AreaBattleDisplayType_Special = 2;
+	AreaBattleDisplayType_BossRush = 3;
+}
+
+enum AreaBattleType {
+	AreaBattleType_None = 0;
+	AreaBattleType_AreaBattleSolo = 1;
+	AreaBattleType_AreaBattleMulti = 2;
+}
+
+enum AreaGroupCategoryType {
+	AreaGroupCategoryType_None = 0;
+	AreaGroupCategoryType_Character = 1;
+	AreaGroupCategoryType_Weapon = 2;
+	AreaGroupCategoryType_Craft = 3;
+	AreaGroupCategoryType_Tower = 4;
+	AreaGroupCategoryType_SummonQuest = 5;
+	AreaGroupCategoryType_Extra = 6;
+}
+
+enum AutoGenerateLanguageCategoryType {
+	AutoGenerateLanguageCategoryType_None = 0;
+	AutoGenerateLanguageCategoryType_WeaponSkillDescription = 1;
+	AutoGenerateLanguageCategoryType_SpecialSkillDescription = 2;
+	AutoGenerateLanguageCategoryType_MateriaSkillDescription = 3;
+}
+
+enum BadgeTargetType {
+	BadgeTargetType_None = 0;
+	BadgeTargetType_AnotherArea = 1;
+	BadgeTargetType_SoloArea = 2;
+	BadgeTargetType_MultiArea = 3;
+}
+
+enum BannerType {
+	BannerType_None = 0;
+	BannerType_Gacha = 1;
+}
+
+enum BattleFieldEffectTargetType {
+	BattleFieldEffectTargetType_None = 0;
+	BattleFieldEffectTargetType_OpponentAll = 1;
+	BattleFieldEffectTargetType_OwnAll = 2;
+}
+
+enum BattleFieldEffectType {
+	BattleFieldEffectType_None = 0;
+	BattleFieldEffectType_StatusUpHP = 101;
+	BattleFieldEffectType_StatusUpPhysicalAttack = 102;
+	BattleFieldEffectType_StatusUpMagicalAttack = 103;
+	BattleFieldEffectType_StatusUpPhysicalDefense = 104;
+	BattleFieldEffectType_StatusUpMagicalDefense = 105;
+	BattleFieldEffectType_StatusUpHealingPower = 106;
+	BattleFieldEffectType_StatusUpCriticalPower = 107;
+	BattleFieldEffectType_StatusUpFireElementResistance = 111;
+	BattleFieldEffectType_StatusUpIceElementResistance = 112;
+	BattleFieldEffectType_StatusUpThunderElementResistance = 113;
+	BattleFieldEffectType_StatusUpEarthElementResistance = 114;
+	BattleFieldEffectType_StatusUpWaterElementResistance = 115;
+	BattleFieldEffectType_StatusUpWindElementResistance = 116;
+	BattleFieldEffectType_StatusUpHolyElementResistance = 117;
+	BattleFieldEffectType_StatusUpDarkElementResistance = 118;
+	BattleFieldEffectType_BuffDebuffPhysicalAttackUp = 201;
+	BattleFieldEffectType_BuffDebuffMagicalAttackUp = 202;
+	BattleFieldEffectType_BuffDebuffPhysicalDefenseUp = 203;
+	BattleFieldEffectType_BuffDebuffMagicalDefenseUp = 204;
+	BattleFieldEffectType_BuffDebuffFireElementResistanceUp = 211;
+	BattleFieldEffectType_BuffDebuffIceElementResistanceUp = 212;
+	BattleFieldEffectType_BuffDebuffThunderElementResistanceUp = 213;
+	BattleFieldEffectType_BuffDebuffEarthElementResistanceUp = 214;
+	BattleFieldEffectType_BuffDebuffWaterElementResistanceUp = 215;
+	BattleFieldEffectType_BuffDebuffWindElementResistanceUp = 216;
+	BattleFieldEffectType_BuffDebuffHolyElementResistanceUp = 217;
+	BattleFieldEffectType_BuffDebuffDarkElementResistanceUp = 218;
+	BattleFieldEffectType_SkillSpecialGaugeIncrementUpLimitBreak = 401;
+	BattleFieldEffectType_SkillSpecialGaugeIncrementUpSummon = 402;
+	BattleFieldEffectType_DamageUpWeakHit = 411;
+	BattleFieldEffectType_DamageUpNotWeakHit = 412;
+	BattleFieldEffectType_ActiveSkillEffectUpDamage = 501;
+	BattleFieldEffectType_ActiveSkillEffectUpDamageWeapon = 502;
+	BattleFieldEffectType_ActiveSkillEffectUpDamageMateria = 503;
+	BattleFieldEffectType_ActiveSkillEffectUpHeal = 504;
+	BattleFieldEffectType_ActiveSkillEffectUpHealWeapon = 505;
+	BattleFieldEffectType_ActiveSkillEffectUpHealMateria = 506;
+}
+
+enum BattleProgressType {
+	BattleProgressType_None = 0;
+	BattleProgressType_Start = 1;
+	BattleProgressType_End = 2;
+}
+
+enum BattleRankType {
+	BattleRankType_None = 0;
+	BattleRankType_F = 1;
+	BattleRankType_E = 2;
+	BattleRankType_D = 3;
+	BattleRankType_C = 4;
+	BattleRankType_B = 5;
+	BattleRankType_A = 6;
+	BattleRankType_S = 7;
+}
+
+enum BattleResultType {
+	BattleResultType_None = 0;
+	BattleResultType_Win = 1;
+	BattleResultType_Lose = 2;
+	BattleResultType_Retire = 3;
+	BattleResultType_Skip = 4;
+	BattleResultType_NoContest = 5;
+}
+
+enum BattleServerAreaType {
+	BattleServerAreaType_None = 0;
+	BattleServerAreaType_Japan = 1;
+	BattleServerAreaType_NorthAmerica = 2;
+	BattleServerAreaType_Asia = 3;
+	BattleServerAreaType_Europe = 4;
+}
+
+enum BattleServerRoomType {
+	BattleServerRoomType_None = 0;
+	BattleServerRoomType_Random = 1;
+	BattleServerRoomType_Private = 2;
+	BattleServerRoomType_Solo = 3;
+}
+
+enum BattleServerStatus {
+	BattleServerStatus_None = 0;
+	BattleServerStatus_StandBy = 1;
+	BattleServerStatus_Active = 2;
+	BattleServerStatus_Draining = 3;
+}
+
+enum BattleType {
+	BattleType_None = 0;
+	BattleType_Story = 1;
+	BattleType_Another = 2;
+	BattleType_AreaSolo = 3;
+	BattleType_AreaMulti = 4;
+	BattleType_EventSolo = 5;
+	BattleType_EventMulti = 6;
+	BattleType_ScoreDungeon = 7;
+	BattleType_Crisis = 8;
+	BattleType_DailyQuest = 9;
+	BattleType_Tower = 10;
+	BattleType_CharacterStory = 11;
+}
+
+enum BattleWaveTalkTimingType {
+	BattleWaveTalkTimingType_None = 0;
+	BattleWaveTalkTimingType_BeforeBattleStart = 1;
+	BattleWaveTalkTimingType_AfterBattleStart = 2;
+	BattleWaveTalkTimingType_BeforeBattleFinish = 3;
+	BattleWaveTalkTimingType_AfterBattleFinish = 4;
+}
+
+enum BoardNodeIconType {
+	BoardNodeIconType_None = 0;
+	BoardNodeIconType_Medium = 1;
+	BoardNodeIconType_Large = 2;
+}
+
+enum BoolType {
+	BoolType_None = 0;
+	BoolType_BoolTrue = 1;
+	BoolType_BoolFalse = 2;
+}
+
+enum BoostAreaTargetType {
+	BoostAreaTargetType_None = 0;
+	BoostAreaTargetType_AreaBattleSolo = 1;
+	BoostAreaTargetType_AreaBattleMulti = 2;
+	BoostAreaTargetType_EventAreaBattleSolo = 3;
+	BoostAreaTargetType_EventAreaBattleMulti = 4;
+}
+
+enum BoxGachaRarityType {
+	BoxGachaRarityType_None = 0;
+	BoxGachaRarityType_Normal = 1;
+	BoxGachaRarityType_Rare = 2;
+	BoxGachaRarityType_Limited = 3;
+}
+
+enum BridgeCoinOperationType {
+	BridgeCoinOperationType_None = 0;
+	BridgeCoinOperationType_Provide = 1;
+	BridgeCoinOperationType_Consume = 2;
+	BridgeCoinOperationType_ConsumePaid = 3;
+}
+
+enum BridgeCoinType {
+	BridgeCoinType_None = 0;
+	BridgeCoinType_Paid = 1;
+}
+
+enum BridgeDeviceType {
+	BridgeDeviceType_None = 0;
+	BridgeDeviceType_iOS = 1;
+	BridgeDeviceType_Android = 2;
+	BridgeDeviceType_Steam = 5;
+}
+
+enum CampaignEffectType {
+	CampaignEffectType_None = 0;
+	CampaignEffectType_UserExpCoefficient = 1;
+	CampaignEffectType_CharacterExpCoefficient = 2;
+	CampaignEffectType_DropRewardCountCoefficient = 3;
+	CampaignEffectType_GilCoefficient = 4;
+	CampaignEffectType_AdditionalStaminaBoostCountLimit = 5;
+	CampaignEffectType_DailyQuestCount = 6;
+	CampaignEffectType_DailyQuestRewardCount = 7;
+	CampaignEffectType_DailyQuestSpecialReward = 8;
+	CampaignEffectType_ChocoboExpeditionCharacterExpCoefficient = 9;
+	CampaignEffectType_ChocoboExpeditionDropRewardRateCoefficient = 10;
+	CampaignEffectType_ChocoboExpeditionRareDropRateCoefficient = 11;
+	CampaignEffectType_ChocoboExpeditionMedalCoefficient = 12;
+	CampaignEffectType_ChocoboExpeditionAdditionalShortenCountLimit = 13;
+	CampaignEffectType_ChocoboExpeditionShorten = 14;
+	CampaignEffectType_ChocoboExpeditionGilCoefficient = 15;
+	CampaignEffectType_MateriaCraftShorten = 16;
+	CampaignEffectType_StaminaBoostRateLimit = 17;
+	CampaignEffectType_RandomShopFreeUpdateCount = 18;
+	CampaignEffectType_AdditionalDropReward = 19;
+	CampaignEffectType_MultiBattleBonus = 20;
+	CampaignEffectType_DisplayRareWave = 21;
+}
+
+enum CampaignTargetType {
+	CampaignTargetType_None = 0;
+	CampaignTargetType_AreaSoloCharacter = 1;
+	CampaignTargetType_AreaSoloWeapon = 2;
+	CampaignTargetType_AreaSoloCraft = 3;
+	CampaignTargetType_AreaMulti = 4;
+	CampaignTargetType_Event = 5;
+	CampaignTargetType_DailyQuest = 6;
+	CampaignTargetType_SummonQuest = 7;
+	CampaignTargetType_AreaSoloExtra = 8;
+}
+
+enum CampaignType {
+	CampaignType_None = 0;
+	CampaignType_Normal = 1;
+	CampaignType_ECPass = 2;
+}
+
+enum CharacterStoryEpisodeType {
+	CharacterStoryEpisodeType_None = 0;
+	CharacterStoryEpisodeType_Drama = 1;
+	CharacterStoryEpisodeType_Battle = 2;
+}
+
+enum CheatReasonType {
+	CheatReasonType_None = 0;
+	CheatReasonType_TokenDecodeFailed = 1;
+	CheatReasonType_RequestDetailInspectionFailed = 2;
+	CheatReasonType_AppIntegrityInspectionFailed = 3;
+	CheatReasonType_DeviceIntegrityInspectionFailed = 4;
+	CheatReasonType_AccountIntegrityInspectionFailed = 5;
+}
+
+enum ChocoboAreaType {
+	ChocoboAreaType_None = 0;
+	ChocoboAreaType_Land = 1;
+	ChocoboAreaType_River = 2;
+	ChocoboAreaType_Mountain = 4;
+	ChocoboAreaType_Sea = 8;
+}
+
+enum ChocoboExpeditionDeckType {
+	ChocoboExpeditionDeckType_None = 0;
+	ChocoboExpeditionDeckType_Initial = 1;
+	ChocoboExpeditionDeckType_Extend = 2;
+}
+
+enum ChocoboExpeditionRewardType {
+	ChocoboExpeditionRewardType_None = 0;
+	ChocoboExpeditionRewardType_Normal = 1;
+	ChocoboExpeditionRewardType_Rare = 2;
+	ChocoboExpeditionRewardType_Adventure = 3;
+}
+
+enum ChocoboParameterType {
+	ChocoboParameterType_None = 0;
+	ChocoboParameterType_Speed = 1;
+	ChocoboParameterType_Stamina = 2;
+	ChocoboParameterType_Intelligence = 3;
+	ChocoboParameterType_Adaptability = 4;
+}
+
+enum ChocoboRankType {
+	ChocoboRankType_None = 0;
+	ChocoboRankType_H = 1;
+	ChocoboRankType_H_Plus = 2;
+	ChocoboRankType_G = 3;
+	ChocoboRankType_G_Plus = 4;
+	ChocoboRankType_F = 5;
+	ChocoboRankType_F_Plus = 6;
+	ChocoboRankType_E = 7;
+	ChocoboRankType_E_Plus = 8;
+	ChocoboRankType_D = 9;
+	ChocoboRankType_D_Plus = 10;
+	ChocoboRankType_C = 11;
+	ChocoboRankType_C_Plus = 12;
+	ChocoboRankType_B = 13;
+	ChocoboRankType_B_Plus = 14;
+	ChocoboRankType_A = 15;
+	ChocoboRankType_A_Plus = 16;
+	ChocoboRankType_S = 17;
+	ChocoboRankType_S_Plus = 18;
+}
+
+enum ChocoboRarityType {
+	ChocoboRarityType_None = 0;
+	ChocoboRarityType_One = 1;
+	ChocoboRarityType_Two = 2;
+	ChocoboRarityType_Three = 3;
+	ChocoboRarityType_Four = 4;
+	ChocoboRarityType_Five = 5;
+}
+
+enum ChocoboSexType {
+	ChocoboSexType_None = 0;
+	ChocoboSexType_Male = 1;
+	ChocoboSexType_Female = 2;
+	ChocoboSexType_Unknown = 3;
+}
+
+enum ChocoboType {
+	ChocoboType_None = 0;
+	ChocoboType_Normal = 1;
+	ChocoboType_Subspecies = 2;
+}
+
+enum ConditionCycleType {
+	ConditionCycleType_None = 0;
+	ConditionCycleType_Second = 1;
+	ConditionCycleType_Minute = 2;
+	ConditionCycleType_Hour = 3;
+	ConditionCycleType_Day = 4;
+	ConditionCycleType_Week = 5;
+	ConditionCycleType_Month = 6;
+}
+
+enum ConditionOperatorType {
+	ConditionOperatorType_None = 0;
+	ConditionOperatorType_And = 1;
+	ConditionOperatorType_Or = 2;
+	ConditionOperatorType_Not = 3;
+}
+
+enum ConditionType {
+	ConditionType_None = 0;
+	ConditionType_Set = 1;
+	ConditionType_TermCycle = 2;
+	ConditionType_UserCount = 3;
+	ConditionType_UserTime = 4;
+}
+
+enum ConditionUserCountType {
+	ConditionUserCountType_None = 0;
+	ConditionUserCountType_UserAccessoryRecipe = 1;
+	ConditionUserCountType_UserAnotherDungeon = 2;
+	ConditionUserCountType_UserCharacter = 3;
+	ConditionUserCountType_UserCharacterCostume = 4;
+	ConditionUserCountType_UserEpisode = 5;
+	ConditionUserCountType_UserGrowthBoardNode = 6;
+	ConditionUserCountType_UserItem = 7;
+	ConditionUserCountType_UserMateriaRecipe = 8;
+	ConditionUserCountType_UserMultiAreaBattle = 9;
+	ConditionUserCountType_UserSoloAreaBattle = 10;
+	ConditionUserCountType_UserSummon = 11;
+	ConditionUserCountType_UserSummonBoardNode = 12;
+	ConditionUserCountType_UserWeapon = 13;
+	ConditionUserCountType_UserStatusRank = 14;
+	ConditionUserCountType_UserCharacterLevel = 15;
+	ConditionUserCountType_UserAnotherDungeonClear = 16;
+	ConditionUserCountType_UserSkillSpecial = 17;
+	ConditionUserCountType_UserWeaponRarity = 18;
+	ConditionUserCountType_UserWeaponLevel = 19;
+	ConditionUserCountType_UserEventStoryLevel = 21;
+	ConditionUserCountType_UserChocoboAdventureRate = 22;
+	ConditionUserCountType_UserEventScenarioEpisode = 23;
+	ConditionUserCountType_UserTowerFloorClear = 24;
+	ConditionUserCountType_UserTutorialStep = 25;
+	ConditionUserCountType_UserPlayRecordInt = 26;
+	ConditionUserCountType_UserCharacterLevelAll = 27;
+	ConditionUserCountType_UserWeaponUpgrade = 28;
+	ConditionUserCountType_UserSkillSpecialLevel = 29;
+	ConditionUserCountType_UserLimitedRelease = 30;
+	ConditionUserCountType_UserWeaponObtainCountFromGacha = 31;
+	ConditionUserCountType_UserComeback = 32;
+	ConditionUserCountType_UserEcPass = 33;
+	ConditionUserCountType_UserShopItemPurchase = 34;
+}
+
+enum ConsumptionReasonType {
+	ConsumptionReasonType_None = 0;
+	ConsumptionReasonType_Debug = 1;
+	ConsumptionReasonType_Chocobo = 2;
+	ConsumptionReasonType_ChocoboExtend = 3;
+	ConsumptionReasonType_Craft = 4;
+	ConsumptionReasonType_CraftExtend = 5;
+	ConsumptionReasonType_Exchange = 6;
+	ConsumptionReasonType_GrowthBoard = 7;
+	ConsumptionReasonType_AccessorySell = 8;
+	ConsumptionReasonType_AccessoryExtend = 9;
+	ConsumptionReasonType_Mission = 10;
+	ConsumptionReasonType_Weapon = 11;
+	ConsumptionReasonType_ShopExchange = 12;
+	ConsumptionReasonType_ShopLineupReset = 13;
+	ConsumptionReasonType_Battle = 14;
+	ConsumptionReasonType_BattleContinue = 15;
+	ConsumptionReasonType_MateriaEnhance = 16;
+	ConsumptionReasonType_MateriaSell = 17;
+	ConsumptionReasonType_MateriaExtend = 18;
+	ConsumptionReasonType_StaminaRecovery = 19;
+	ConsumptionReasonType_Dungeon = 20;
+	ConsumptionReasonType_Gacha = 21;
+	ConsumptionReasonType_SummonBoard = 22;
+	ConsumptionReasonType_ExchangeAnotherDungeonKey = 23;
+	ConsumptionReasonType_BridgeRecovery = 24;
+	ConsumptionReasonType_BoostRecovery = 25;
+	ConsumptionReasonType_ShopStonePurchase = 26;
+	ConsumptionReasonType_ChocoboSell = 27;
+	ConsumptionReasonType_ChocoboFeed = 28;
+	ConsumptionReasonType_MateriaEvolve = 29;
+	ConsumptionReasonType_DungeonSave = 30;
+	ConsumptionReasonType_BoxGacha = 31;
+}
+
+enum CraftType {
+	CraftType_None = 0;
+	CraftType_Accessory = 1;
+	CraftType_Materia = 2;
+}
+
+enum CreditTitleType {
+	CreditTitleType_None = 0;
+	CreditTitleType_HeaderLarge = 1;
+	CreditTitleType_HeaderMiddle = 2;
+	CreditTitleType_HeaderSmall = 3;
+}
+
+enum CreditType {
+	CreditType_None = 0;
+	CreditType_RoleVertical = 1;
+	CreditType_RoleHorizontal = 2;
+	CreditType_ColumnsOne = 3;
+	CreditType_ColumnsTwo = 4;
+	CreditType_Image = 5;
+}
+
+enum DailyQuestType {
+	DailyQuestType_None = 0;
+	DailyQuestType_Gil = 1;
+	DailyQuestType_CharacterPiece = 2;
+	DailyQuestType_WeaponMedal = 3;
+	DailyQuestType_RareEnemy = 4;
+}
+
+enum DisplayCurrencyType {
+	DisplayCurrencyType_None = 0;
+	DisplayCurrencyType_GilAndStone = 1;
+	DisplayCurrencyType_Item = 2;
+	DisplayCurrencyType_Stone = 3;
+}
+
+enum DisplayType {
+	DisplayType_None = 0;
+	DisplayType_Highlight = 1;
+}
+
+enum DungeonMissionType {
+	DungeonMissionType_None = 0;
+	DungeonMissionType_NoDeath = 1;
+	DungeonMissionType_UnuseHeal = 2;
+	DungeonMissionType_UnuseItem = 3;
+	DungeonMissionType_OverMaxDamage = 4;
+	DungeonMissionType_ClearBossAllWithinBattleTimeSec = 5;
+	DungeonMissionType_ClearBossAllScoreRankS = 6;
+	DungeonMissionType_WithinPartyMemberCount = 7;
+	DungeonMissionType_OverElementTotalDamage = 8;
+	DungeonMissionType_OverWeakTotalDamage = 9;
+	DungeonMissionType_ClearBossAll = 10;
+	DungeonMissionType_ClearTreasureAll = 11;
+	DungeonMissionType_BattleWin = 12;
+	DungeonMissionType_ClearBossAllWithinTakenDamage = 13;
+}
+
+enum DungeonProgressType {
+	DungeonProgressType_None = 0;
+	DungeonProgressType_Start = 1;
+	DungeonProgressType_End = 2;
+	DungeonProgressType_Unreceived = 3;
+}
+
+enum DungeonRankType {
+	DungeonRankType_None = 0;
+	DungeonRankType_F = 1;
+	DungeonRankType_F_Plus = 2;
+	DungeonRankType_E = 3;
+	DungeonRankType_E_Plus = 4;
+	DungeonRankType_D = 5;
+	DungeonRankType_D_Plus = 6;
+	DungeonRankType_C = 7;
+	DungeonRankType_C_Plus = 8;
+	DungeonRankType_B = 9;
+	DungeonRankType_B_Plus = 10;
+	DungeonRankType_A = 11;
+	DungeonRankType_A_Plus = 12;
+	DungeonRankType_S = 13;
+	DungeonRankType_S_Plus = 14;
+	DungeonRankType_SS = 15;
+}
+
+enum DungeonResultType {
+	DungeonResultType_None = 0;
+	DungeonResultType_Win = 1;
+	DungeonResultType_Lose = 2;
+	DungeonResultType_Retire = 3;
+}
+
+enum DungeonTreasureType {
+	DungeonTreasureType_None = 0;
+	DungeonTreasureType_Rare = 1;
+}
+
+enum DungeonType {
+	DungeonType_None = 0;
+	DungeonType_Story = 1;
+	DungeonType_Crisis = 2;
+	DungeonType_ScoreDungeon = 3;
+	DungeonType_Another = 4;
+}
+
+enum EcPassType {
+	EcPassType_None = 0;
+	EcPassType_Solder = 1;
+	EcPassType_Enhance = 2;
+	EcPassType_Event = 3;
+}
+
+enum ElementType {
+	ElementType_None = 0;
+	ElementType_No = 1;
+	ElementType_Fire = 2;
+	ElementType_Ice = 3;
+	ElementType_Thunder = 4;
+	ElementType_Earth = 5;
+	ElementType_Water = 6;
+	ElementType_Wind = 7;
+	ElementType_Holy = 8;
+	ElementType_Dark = 9;
+}
+
+enum EnhanceResultType {
+	EnhanceResultType_Normal = 0;
+	EnhanceResultType_Good = 1;
+	EnhanceResultType_Great = 2;
+	EnhanceResultType_Excellent = 3;
+}
+
+enum EnhanceType {
+	EnhanceType_None = 0;
+	EnhanceType_Materia = 1;
+	EnhanceType_Weapon = 2;
+}
+
+enum ErrorControlType {
+	ErrorControlType_None = 0;
+	ErrorControlType_Title = 1;
+	ErrorControlType_Home = 2;
+	ErrorControlType_Stay = 3;
+	ErrorControlType_Client = 4;
+	ErrorControlType_Retry = 5;
+}
+
+enum EventBattleType {
+	EventBattleType_None = 0;
+	EventBattleType_Normal = 1;
+	EventBattleType_Clash = 2;
+}
+
+enum EventClashBattleGroupType {
+	EventClashBattleGroupType_None = 0;
+	EventClashBattleGroupType_Solo = 1;
+	EventClashBattleGroupType_Multi = 2;
+}
+
+enum EventType {
+	EventType_None = 0;
+	EventType_Summon = 1;
+	EventType_Boss = 2;
+	EventType_Story = 3;
+	EventType_Scenario = 4;
+	EventType_Reward = 5;
+	EventType_Rare = 6;
+	EventType_ScoreDungeon = 7;
+}
+
+enum FeatureLockDisplayType {
+	FeatureLockDisplayType_None = 0;
+	FeatureLockDisplayType_LockIcon = 1;
+	FeatureLockDisplayType_NonDisplay = 2;
+}
+
+enum FeatureLockType {
+	FeatureLockType_None = 0;
+	FeatureLockType_Initial = 1;
+	FeatureLockType_Maintenance = 2;
+	FeatureLockType_ComingSoon = 4;
+}
+
+enum FeatureType {
+	FeatureType_None = 0;
+	FeatureType_Story = 1;
+	FeatureType_AreaBattle = 2;
+	FeatureType_Multi = 3;
+	FeatureType_AnotherDungeon = 4;
+	FeatureType_Event = 5;
+	FeatureType_Chocobo = 6;
+	FeatureType_Guild = 7;
+	FeatureType_Summon = 8;
+	FeatureType_PartySubWeapon1 = 9;
+	FeatureType_PartySubWeapon2 = 10;
+	FeatureType_PartySubWeapon3 = 11;
+	FeatureType_PartyAccessory1 = 12;
+	FeatureType_PartyAccessory2 = 13;
+	FeatureType_PartyBattleCount = 14;
+	FeatureType_CharacterStatusStream = 16;
+	FeatureType_CharacterAffection = 17;
+	FeatureType_CharacterStory = 18;
+	FeatureType_LBMission = 19;
+	FeatureType_SummonStatusStream = 20;
+	FeatureType_Collection = 21;
+	FeatureType_MateriaEnhance = 22;
+	FeatureType_Craft = 23;
+	FeatureType_AccessoryCraft = 24;
+	FeatureType_Stone = 25;
+	FeatureType_AccountTakeover = 26;
+	FeatureType_Weapon = 27;
+	FeatureType_Materia = 28;
+	FeatureType_Accessory = 29;
+	FeatureType_SoloParty = 30;
+	FeatureType_MultiParty = 31;
+	FeatureType_Gacha = 32;
+	FeatureType_Shop = 33;
+	FeatureType_Gift = 34;
+	FeatureType_Mission = 35;
+	FeatureType_Character = 36;
+	FeatureType_MateriaEvolve = 37;
+	FeatureType_CraftOption = 38;
+	FeatureType_ChocoboExpedition = 39;
+	FeatureType_Credit = 103;
+	FeatureType_DataDeletion = 104;
+	FeatureType_Friend = 105;
+	FeatureType_Profile = 106;
+	FeatureType_FriendInvitation = 107;
+	FeatureType_Background = 108;
+	FeatureType_Boost = 109;
+	FeatureType_Advertisement = 110;
+	FeatureType_StoryMode = 112;
+	FeatureType_MateriaSell = 113;
+	FeatureType_MateriaCraft = 114;
+	FeatureType_MateriaCraftOption = 115;
+	FeatureType_Tower = 116;
+	FeatureType_CrisisDungeon = 117;
+	FeatureType_SummonQuest = 118;
+	FeatureType_DailyQuest = 119;
+	FeatureType_SingleContents = 120;
+	FeatureType_SeasonPass = 121;
+	FeatureType_AreaGroupExtra = 122;
+}
+
+enum FluctuationType {
+	FluctuationType_None = 0;
+	FluctuationType_Reward = 1;
+	FluctuationType_Consumption = 2;
+}
+
+enum FriendResponseType {
+	FriendResponseType_None = 0;
+	FriendResponseType_Success = 1;
+	FriendResponseType_FriendMaxLimit = 2;
+	FriendResponseType_FriendRequestMaxLimit = 3;
+	FriendResponseType_FriendReceiveMaxLimit = 4;
+	FriendResponseType_FriendRequestExists = 5;
+	FriendResponseType_FriendExists = 6;
+	FriendResponseType_UserNotFoundByDisplayId = 7;
+	FriendResponseType_FriendReceiveNotExists = 8;
+	FriendResponseType_FriendReceiveExists = 9;
+	FriendResponseType_FriendMaxLimitTargetUser = 10;
+}
+
+enum FriendType {
+	FriendType_NotFriend = 0;
+	FriendType_Friend = 1;
+	FriendType_PendingRequest = 2;
+	FriendType_PendingReceive = 3;
+	FriendType_Myself = 4;
+}
+
+enum GachaConsumptionType {
+	GachaConsumptionType_None = 0;
+	GachaConsumptionType_PaidStone = 1;
+	GachaConsumptionType_Stone = 2;
+	GachaConsumptionType_Free = 3;
+}
+
+enum GachaDetailDisplayType {
+	GachaDetailDisplayType_None = 0;
+	GachaDetailDisplayType_Display = 1;
+}
+
+enum GachaDetailTemplateType {
+	GachaDetailTemplateType_None = 0;
+	GachaDetailTemplateType_Select = 1;
+	GachaDetailTemplateType_Ticket = 2;
+	GachaDetailTemplateType_Special = 3;
+}
+
+enum GachaDirectionCostumeType {
+	GachaDirectionCostumeType_Normal = 0;
+	GachaDirectionCostumeType_Special = 1;
+}
+
+enum GachaDirectionDamageType {
+	GachaDirectionDamageType_Normal = 0;
+	GachaDirectionDamageType_Critical = 1;
+	GachaDirectionDamageType_Fever = 2;
+}
+
+enum GachaDirectionEnemyStatusType {
+	GachaDirectionEnemyStatusType_Normal = 0;
+	GachaDirectionEnemyStatusType_Aura = 1;
+}
+
+enum GachaFixedLotType {
+	GachaFixedLotType_None = 0;
+	GachaFixedLotType_SR = 1;
+	GachaFixedLotType_SSR = 2;
+}
+
+enum GachaGroupType {
+	GachaGroupType_None = 0;
+	GachaGroupType_Ticket = 1;
+	GachaGroupType_Select = 2;
+	GachaGroupType_Special = 3;
+}
+
+enum GachaLotType {
+	GachaLotType_None = 0;
+	GachaLotType_Normal = 1;
+	GachaLotType_SR = 2;
+	GachaLotType_SSR = 3;
+	GachaLotType_PickUpSSR = 4;
+}
+
+enum GachaNotiType {
+	GachaNotiType_None = 0;
+	GachaNotiType_NewPickUp = 1;
+	GachaNotiType_PickUp = 2;
+}
+
+enum GachaStampSheetCellChoiceType {
+	GachaStampSheetCellChoiceType_None = 0;
+	GachaStampSheetCellChoiceType_GachaFixedLotType = 1;
+	GachaStampSheetCellChoiceType_RewardLotType = 2;
+}
+
+enum GachaStampSheetCellType {
+	GachaStampSheetCellType_None = 0;
+	GachaStampSheetCellType_GachaFixedLotType = 1;
+	GachaStampSheetCellType_Reward = 2;
+	GachaStampSheetCellType_PickUpSSRFixedType = 3;
+	GachaStampSheetCellType_GachaChoiceLotType = 4;
+	GachaStampSheetCellType_FixedWeapon = 5;
+}
+
+enum GachaStepNotiType {
+	GachaStepNotiType_None = 0;
+	GachaStepNotiType_CountFree = 1;
+	GachaStepNotiType_Count = 2;
+}
+
+enum GachaType {
+	GachaType_None = 0;
+	GachaType_Tutorial = 1;
+	GachaType_StepUp = 2;
+	GachaType_Ticket = 3;
+}
+
+enum GachaWeaponDetailType {
+	GachaWeaponDetailType_None = 0;
+	GachaWeaponDetailType_Display = 1;
+	GachaWeaponDetailType_Pickup = 2;
+}
+
+enum GachaWeaponLotSetRelType {
+	GachaWeaponLotSetRelType_None = 0;
+	GachaWeaponLotSetRelType_LotGroup = 1;
+	GachaWeaponLotSetRelType_WishSelected = 2;
+	GachaWeaponLotSetRelType_WishNotSelected = 3;
+}
+
+enum GrantValueType {
+	GrantValueType_None = 0;
+	GrantValueType_DirectValue = 1;
+	GrantValueType_PercentageValue = 2;
+}
+
+enum GrowthBoardType {
+	GrowthBoardType_None = 0;
+	GrowthBoardType_Character = 1;
+	GrowthBoardType_Weapon = 2;
+	GrowthBoardType_Wear = 3;
+	GrowthBoardType_Summon = 4;
+}
+
+enum HelpPopupFeatureType {
+	HelpPopupFeatureType_None = 0;
+	HelpPopupFeatureType_StoryTop = 1;
+	HelpPopupFeatureType_PartyStory = 2;
+	HelpPopupFeatureType_SingleContentsTop = 3;
+	HelpPopupFeatureType_PartySolo = 4;
+	HelpPopupFeatureType_PartyMulti = 5;
+	HelpPopupFeatureType_AnotherDungeon = 6;
+	HelpPopupFeatureType_CrisisDungeon = 7;
+	HelpPopupFeatureType_MultiTop = 8;
+	HelpPopupFeatureType_ChocoboFarmTop = 9;
+	HelpPopupFeatureType_ChocoboExpedition = 10;
+	HelpPopupFeatureType_StatusStreamTop = 11;
+	HelpPopupFeatureType_StatusStreamCharacter = 12;
+	HelpPopupFeatureType_StatusStreamSummon = 13;
+	HelpPopupFeatureType_EnhanceTop = 14;
+	HelpPopupFeatureType_EnhanceMateria = 15;
+	HelpPopupFeatureType_EnhanceWeapon = 16;
+	HelpPopupFeatureType_WeaponStock = 17;
+	HelpPopupFeatureType_SynthesisMateria = 18;
+	HelpPopupFeatureType_PartyTop = 19;
+	HelpPopupFeatureType_PartyDetail = 20;
+	HelpPopupFeatureType_Gacha = 21;
+	HelpPopupFeatureType_EventTop = 22;
+	HelpPopupFeatureType_Mission = 23;
+	HelpPopupFeatureType_Shop = 24;
+	HelpPopupFeatureType_Exchange = 25;
+	HelpPopupFeatureType_ItemIndex = 26;
+	HelpPopupFeatureType_Tower = 27;
+	HelpPopupFeatureType_ScoreDungeon = 28;
+	HelpPopupFeatureType_EventCrash = 29;
+	HelpPopupFeatureType_StoryEpisodeSelect = 30;
+	HelpPopupFeatureType_SingleContentsEnhance = 31;
+	HelpPopupFeatureType_DailyQuest = 32;
+	HelpPopupFeatureType_SummonQuest = 33;
+	HelpPopupFeatureType_CharacterStory = 34;
+	HelpPopupFeatureType_WeaponMedalExchange = 35;
+	HelpPopupFeatureType_ChocoboDetail = 36;
+	HelpPopupFeatureType_ChocoboHouse = 37;
+}
+
+enum HonorPositionType {
+	HonorPositionType_None = 0;
+	HonorPositionType_HonorTop = 1;
+	HonorPositionType_HonorBottom = 2;
+	HonorPositionType_HonorTopAndBottom = 3;
+	HonorPositionType_Background = 4;
+	HonorPositionType_Icon = 5;
+}
+
+enum InstantItemDungeonEffectType {
+	InstantItemDungeonEffectType_None = 0;
+	InstantItemDungeonEffectType_RecoverHP = 1;
+	InstantItemDungeonEffectType_RecoverATB = 2;
+	InstantItemDungeonEffectType_RecoverLimitGauge = 3;
+	InstantItemDungeonEffectType_RecoverSummonGauge = 4;
+	InstantItemDungeonEffectType_RecoverMaxHP = 5;
+	InstantItemDungeonEffectType_PhysicalAttackUp = 6;
+	InstantItemDungeonEffectType_PhysicalDefenseUp = 7;
+	InstantItemDungeonEffectType_MagicalAttackUp = 8;
+	InstantItemDungeonEffectType_MagicalDefenseUp = 9;
+	InstantItemDungeonEffectType_FireElementDamageUp = 10;
+	InstantItemDungeonEffectType_IceElementDamageUp = 11;
+	InstantItemDungeonEffectType_ThunderElementDamageUp = 12;
+	InstantItemDungeonEffectType_EarthElementDamageUp = 13;
+	InstantItemDungeonEffectType_WaterElementDamageUp = 14;
+	InstantItemDungeonEffectType_WindElementDamageUp = 15;
+	InstantItemDungeonEffectType_HolyElementDamageUp = 16;
+	InstantItemDungeonEffectType_DarkElementDamageUp = 17;
+	InstantItemDungeonEffectType_TriggerLockKey = 18;
+}
+
+enum InstantItemTriggerType {
+	InstantItemTriggerType_None = 0;
+	InstantItemTriggerType_Immediate = 1;
+	InstantItemTriggerType_NextSymbolBattle = 2;
+}
+
+enum InstantItemType {
+	InstantItemType_None = 0;
+	InstantItemType_Dungeon = 1;
+}
+
+enum ItemDungeonDisplayType {
+	ItemDungeonDisplayType_None = 0;
+	ItemDungeonDisplayType_ItemMenu = 1;
+	ItemDungeonDisplayType_KeyList = 2;
+}
+
+enum ItemId {
+	ItemId_None = 0;
+	ItemId_GilId = 1;
+	ItemId_GeneralWeaponMedalId = 2;
+	ItemId_GeneralCharacterPieceId = 3;
+	ItemId_GeneralSummonPieceId = 4;
+	ItemId_AnotherDungeonKeyId = 5;
+	ItemId_ExtendAccessoryLimitId = 6;
+	ItemId_ExtendMateriaLimitId = 7;
+	ItemId_ExtendCraftLimitId = 8;
+	ItemId_AnotherDungeonKeyTicketId = 9;
+	ItemId_ChocoboMedalId = 10;
+	ItemId_ExtendChocoboLimitId = 11;
+	ItemId_HardMedalId = 12;
+	ItemId_MultiMedalId = 13;
+	ItemId_SpecialWeaponMedalId = 14;
+	ItemId_DungeonSaveCrystalId = 15;
+	ItemId_EcPassSolder = 20001;
+	ItemId_EcPassEnhance = 20002;
+	ItemId_EcPassEvent = 20003;
+	ItemId_DisplayPaidStoneId = 99001;
+	ItemId_DisplayFreeStoneId = 99002;
+}
+
+enum ItemRarityType {
+	ItemRarityType_None = 0;
+	ItemRarityType_One = 1;
+	ItemRarityType_Two = 2;
+	ItemRarityType_Three = 3;
+	ItemRarityType_Four = 4;
+	ItemRarityType_Five = 5;
+}
+
+enum ItemTargetType {
+	ItemTargetType_None = 0;
+	ItemTargetType_Single = 1;
+	ItemTargetType_All = 2;
+	ItemTargetType_Object = 3;
+}
+
+enum ItemType {
+	ItemType_None = 0;
+	ItemType_Gil = 1;
+	ItemType_CharacterPiece = 2;
+	ItemType_SummonPiece = 3;
+	ItemType_MateriaEnhanceIngredient = 4;
+	ItemType_MateriaCraftIngredient = 5;
+	ItemType_CraftOption = 6;
+	ItemType_AccessoryCraftIngredient = 7;
+	ItemType_CraftShorten = 9;
+	ItemType_WeaponEnhanceIngredient = 10;
+	ItemType_WeaponReleaseIngredient = 11;
+	ItemType_WeaponUpgradeIngredient = 12;
+	ItemType_ExtendLimit = 13;
+	ItemType_AnotherDungeonKey = 14;
+	ItemType_AnotherDungeonKeyExchangeTicket = 15;
+	ItemType_ChocoboExpeditionShorten = 16;
+	ItemType_ChocoboMedal = 17;
+	ItemType_WeaponMedal = 18;
+	ItemType_StaminaRecover = 19;
+	ItemType_General = 20;
+	ItemType_Honor = 21;
+	ItemType_SelectTicket = 22;
+	ItemType_ChocoboFeed = 23;
+	ItemType_MateriaEvolveIngredient = 24;
+	ItemType_GeneralIngredient = 25;
+	ItemType_Medal = 26;
+	ItemType_GachaTicket = 27;
+	ItemType_ChocoboExpedition = 28;
+	ItemType_DungeonSaveCrystal = 29;
+	ItemType_SeasonPass = 30;
+	ItemType_EcPass = 31;
+	ItemType_Display = 99;
+}
+
+enum JudgeRewardType {
+	JudgeRewardType_None = 0;
+	JudgeRewardType_Bronze = 1;
+	JudgeRewardType_Silver = 2;
+	JudgeRewardType_Gold = 3;
+}
+
+enum LanguageCodeType {
+	LanguageCodeType_None = 0;
+	LanguageCodeType_en = 1;
+	LanguageCodeType_ja = 2;
+}
+
+enum LimitComboType {
+	LimitComboType_None = 0;
+	LimitComboType_AttackUp = 1;
+	LimitComboType_HealUp = 2;
+	LimitComboType_ElementUp = 3;
+	LimitComboType_TimeExtension = 4;
+	LimitComboType_AddHead = 5;
+}
+
+enum LimitedReleaseDirectionType {
+	LimitedReleaseDirectionType_None = 0;
+	LimitedReleaseDirectionType_A = 1;
+	LimitedReleaseDirectionType_B = 2;
+}
+
+enum LimitedReleaseTargetType {
+	LimitedReleaseTargetType_None = 0;
+	LimitedReleaseTargetType_ShopItem = 1;
+	LimitedReleaseTargetType_Gacha = 2;
+}
+
+enum LimitedReleaseTriggerSourceType {
+	LimitedReleaseTriggerSourceType_None = 0;
+	LimitedReleaseTriggerSourceType_All = 1;
+	LimitedReleaseTriggerSourceType_BattleResult = 2;
+	LimitedReleaseTriggerSourceType_TowerFloorClear = 3;
+	LimitedReleaseTriggerSourceType_DungeonClear = 4;
+	LimitedReleaseTriggerSourceType_ChocoboExpeditionResult = 5;
+	LimitedReleaseTriggerSourceType_MateriaCraft = 6;
+	LimitedReleaseTriggerSourceType_SpecialSkillGet = 7;
+	LimitedReleaseTriggerSourceType_WeaponEnhance = 8;
+	LimitedReleaseTriggerSourceType_WeaponUpgrade = 9;
+	LimitedReleaseTriggerSourceType_StoryClear = 10;
+	LimitedReleaseTriggerSourceType_GachaResult = 11;
+}
+
+enum LoginBonusContinuousType {
+	LoginBonusContinuousType_None = 0;
+	LoginBonusContinuousType_Once = 1;
+	LoginBonusContinuousType_Loop = 2;
+}
+
+enum LoginBonusType {
+	LoginBonusType_None = 0;
+	LoginBonusType_Normal = 1;
+	LoginBonusType_Beginner = 2;
+	LoginBonusType_Special = 3;
+}
+
+enum MaintenanceType {
+	MaintenanceType_All = 0;
+	MaintenanceType_Part = 1;
+	MaintenanceType_BattleServer = 2;
+}
+
+enum MatchingBusyDegree {
+	MatchingBusyDegree_None = 0;
+	MatchingBusyDegree_Free = 1;
+	MatchingBusyDegree_Middle = 2;
+	MatchingBusyDegree_Busy = 3;
+}
+
+enum MatchingStatus {
+	MatchingStatus_None = 0;
+	MatchingStatus_Running = 1;
+	MatchingStatus_Success = 2;
+	MatchingStatus_Timeout = 3;
+	MatchingStatus_Canceled = 4;
+	MatchingStatus_Failed = 5;
+}
+
+enum MatchingTargetType {
+	MatchingTargetType_None = 0;
+	MatchingTargetType_Area = 1;
+	MatchingTargetType_Event = 2;
+}
+
+enum MateriaType {
+	MateriaType_None = 0;
+	MateriaType_Active = 1;
+	MateriaType_Support = 2;
+}
+
+enum MissionBonusType {
+	MissionBonusType_None = 0;
+	MissionBonusType_Normal = 1;
+	MissionBonusType_SeasonPass = 2;
+}
+
+enum MissionCountType {
+	MissionCountType_None = 0;
+	MissionCountType_ProgressIncrement = 1;
+	MissionCountType_ProgressAbsolute = 2;
+	MissionCountType_Set = 3;
+}
+
+enum MissionGroupType {
+	MissionGroupType_None = 0;
+	MissionGroupType_Normal = 1;
+	MissionGroupType_Daily = 2;
+	MissionGroupType_Weekly = 3;
+	MissionGroupType_Special = 4;
+	MissionGroupType_Beginner = 5;
+	MissionGroupType_SeasonPass = 6;
+	MissionGroupType_SpecialCharacter = 7;
+	MissionGroupType_SpecialSummon = 8;
+	MissionGroupType_Event = 9;
+	MissionGroupType_Guide = 10;
+	MissionGroupType_EventDaily = 11;
+	MissionGroupType_EventWeekly = 12;
+	MissionGroupType_EventSpecial = 13;
+	MissionGroupType_Chocobo = 14;
+	MissionGroupType_SeasonPassDaily = 15;
+	MissionGroupType_SeasonPassWeekly = 16;
+}
+
+enum MissionType {
+	MissionType_None = 0;
+	MissionType_ProgressAbsoluteCharacterLevel = 1;
+	MissionType_SetStoryReadEpisode = 2;
+	MissionType_ProgressBattleWin = 3;
+	MissionType_ProgressLogin = 4;
+	MissionType_ProgressMissionClear = 5;
+	MissionType_SetSupply = 6;
+	MissionType_SetSummonGet = 7;
+	MissionType_ProgressSummonGet = 8;
+	MissionType_SetSummonSkillGet = 9;
+	MissionType_ProgressSummonBoardOpen = 10;
+	MissionType_ProgressSummonSkillGet = 11;
+	MissionType_ProgressSummonSkillLevel = 12;
+	MissionType_ProgressSummonSkillLevelEnhance = 13;
+	MissionType_ProgressMateriaCollect = 14;
+	MissionType_ProgressMateriaEnhance = 15;
+	MissionType_ProgressAbsoluteMateriaLevel = 16;
+	MissionType_ProgressCraft = 17;
+	MissionType_ProgressAccessoryCollect = 18;
+	MissionType_ProgressShopPurchase = 19;
+	MissionType_ProgressWeaponEnhance = 20;
+	MissionType_ProgressAbsoluteWeaponLevel = 21;
+	MissionType_ProgressWeaponUpgrade = 22;
+	MissionType_ProgressBattleAreaWin = 23;
+	MissionType_ProgressBattleMultiWin = 24;
+	MissionType_SetDungeonAnotherEntry = 25;
+	MissionType_ProgressGrowthBoardCharacterOpen = 26;
+	MissionType_ProgressBattleWinWithCharacter = 27;
+	MissionType_ProgressBattleAreaWinWithCharacter = 28;
+	MissionType_ProgressBattleMultiWinWithCharacter = 29;
+	MissionType_ProgressWeaponCollect = 30;
+	MissionType_ProgressAbsoluteUserRank = 31;
+	MissionType_SetDeckUpsert = 32;
+	MissionType_SetDeckUpsertCharacter = 33;
+	MissionType_SetDeckUpsertCharacterCostume = 34;
+	MissionType_SetDeckUpsertWeapon = 35;
+	MissionType_SetDeckUpsertMateria = 36;
+	MissionType_SetDeckUpsertAccessory = 37;
+	MissionType_ProgressAnotherRankClear = 38;
+	MissionType_ProgressWeaponLevelCount = 41;
+	MissionType_ProgressCharacterLevelCount = 42;
+	MissionType_ProgressWeaponRarityUp = 43;
+	MissionType_ProgressGachaDraw = 44;
+	MissionType_ProgressAbsoluteCombatPower = 45;
+	MissionType_SetLimitBreakGet = 46;
+	MissionType_ProgressLimitBreakGet = 47;
+	MissionType_ProgressLimitBreakLevel = 48;
+	MissionType_ProgressLimitBreakLevelEnhance = 49;
+	MissionType_ProgressWeaponRelease = 50;
+	MissionType_ProgressWeaponUpgradeLimit = 51;
+	MissionType_ProgressCraftMateria = 52;
+	MissionType_ProgressCraftMateriaQuality = 53;
+	MissionType_ProgressAnotherClear = 54;
+	MissionType_SetGiftReceive = 55;
+	MissionType_ProgressAllCharacterLevel = 56;
+	MissionType_ProgressAllWeaponLevel = 57;
+	MissionType_ProgressConsumptionStaminaBattle = 58;
+	MissionType_ProgressConsumptionStaminaAreaBattle = 59;
+	MissionType_ProgressConsumptionStaminaMultiBattle = 60;
+	MissionType_ProgressConsumptionStaminaBattleWithCharacter = 61;
+	MissionType_ProgressConsumptionStaminaAreaBattleWithCharacter = 62;
+	MissionType_ProgressConsumptionStaminaMultiBattleWithCharacter = 63;
+	MissionType_ProgressWeaponUpgradeCount = 64;
+	MissionType_ProgressWinEnemyLevelCount = 65;
+	MissionType_ProgressAbsoluteBattleMaxBlowDamage = 66;
+	MissionType_SetMultiRoomCreate = 67;
+	MissionType_ProgressChocoboExpeditionReceive = 68;
+	MissionType_ProgressChocoboExpeditionShorten = 69;
+	MissionType_ProgressChocoboPurchase = 70;
+	MissionType_ProgressChocoboGrowthRankCount = 71;
+	MissionType_ProgressEventBattleEntry = 72;
+	MissionType_SetEventStoryRead = 73;
+	MissionType_ProgressAnotherWithoutItem = 74;
+	MissionType_ProgressAnotherScoreClear = 75;
+	MissionType_ProgressHonorGet = 76;
+	MissionType_ProgressMateriaRecipeGet = 77;
+	MissionType_ProgressCostumeGet = 78;
+	MissionType_ProgressItemGet = 79;
+	MissionType_SetFriendRequest = 80;
+	MissionType_SetProfileHonorUpdate = 81;
+	MissionType_SetProfileUpdate = 82;
+	MissionType_SetProfileMessageUpdate = 83;
+	MissionType_ProgressMateriaEvolve = 84;
+	MissionType_SetStoryStoryModeStoryPartyClear = 85;
+	MissionType_ProgressStoryStoryModeStoryPartyClear = 86;
+	MissionType_ProgressBattlePhaseBreak = 87;
+	MissionType_ProgressBattleCriticalHit = 88;
+	MissionType_ProgressBattleLimitBreak = 89;
+	MissionType_ProgressBattleSummonSkill = 90;
+	MissionType_SetChocoboSpecialTalk = 91;
+	MissionType_ProgressChocoboFeed = 92;
+	MissionType_ProgressEventMultiBattleEntry = 93;
+	MissionType_ProgressStaminaBoostClear = 94;
+	MissionType_ProgressConsumptionStaminaArea = 95;
+	MissionType_ProgressConsumptionStaminaMulti = 96;
+	MissionType_ProgressConsumptionStaminaMultiDifficultyLevel = 97;
+	MissionType_ProgressMateriaLevelCount = 98;
+	MissionType_ProgressPlayRecord = 99;
+	MissionType_ProgressBattleMultiAreaWin = 100;
+	MissionType_SetEventStoryDramaRead = 101;
+	MissionType_ProgressAbsoluteChocoboExpeditionAdventureRate = 102;
+	MissionType_ProgressItemTypeGet = 103;
+	MissionType_ProgressAbsoluteTowerFloorClear = 104;
+	MissionType_SetUserSetting = 105;
+	MissionType_ProgressBattleEventSoloAreaWin = 106;
+	MissionType_ProgressBattleEventMultiAreaWin = 107;
+	MissionType_ProgressConsumptionStaminaEventSoloAreaBattle = 108;
+	MissionType_ProgressConsumptionStaminaEventMultiAreaBattle = 109;
+	MissionType_ProgressChocoboExpeditionItemCollect = 110;
+	MissionType_ProgressConsumptionStaminaSoloBattleAll = 111;
+	MissionType_ProgressConsumptionStaminaMultiBattleAll = 112;
+}
+
+enum MultiBattleContributionAwardType {
+	MultiBattleContributionAwardType_None = 0;
+	MultiBattleContributionAwardType_Bronze = 1;
+	MultiBattleContributionAwardType_Silver = 2;
+	MultiBattleContributionAwardType_Gold = 3;
+}
+
+enum MultiBattleContributionType {
+	MultiBattleContributionType_None = 0;
+	MultiBattleContributionType_TotalDamage = 1;
+	MultiBattleContributionType_MaxBlowDamage = 2;
+	MultiBattleContributionType_NotesBreakCount = 3;
+	MultiBattleContributionType_WeakElementHitCount = 4;
+	MultiBattleContributionType_TotalHpHeal = 5;
+	MultiBattleContributionType_TotalStatusConditionHealCount = 6;
+	MultiBattleContributionType_TotalAtbCost = 7;
+	MultiBattleContributionType_LimitBreakCount = 8;
+	MultiBattleContributionType_LimitComboCount = 9;
+	MultiBattleContributionType_TacticsSwitchingCount = 10;
+	MultiBattleContributionType_TacticsLevelMaxCount = 11;
+	MultiBattleContributionType_BuffSuccessCount = 12;
+	MultiBattleContributionType_BuffOffsetCount = 13;
+	MultiBattleContributionType_DebuffSuccessCount = 14;
+	MultiBattleContributionType_DebuffOffsetCount = 15;
+	MultiBattleContributionType_StatusConditionSuccessCount = 16;
+}
+
+enum MultiBattleMannerType {
+	MultiBattleMannerType_None = 0;
+	MultiBattleMannerType_NotReady = 1;
+	MultiBattleMannerType_LeaveRoom = 2;
+	MultiBattleMannerType_NotUseSkill = 3;
+	MultiBattleMannerType_BattleClear = 4;
+}
+
+enum MultiBattleRestartType {
+	MultiBattleRestartType_None = 0;
+	MultiBattleRestartType_RestartBattle = 1;
+	MultiBattleRestartType_ProvideReward = 2;
+	MultiBattleRestartType_DeleteBattle = 3;
+}
+
+enum MultiCommunicationType {
+	MultiCommunicationType_None = 0;
+	MultiCommunicationType_Room = 1;
+	MultiCommunicationType_Battle = 2;
+	MultiCommunicationType_Result = 3;
+}
+
+enum MultiRoomResponseType {
+	MultiRoomResponseType_None = 0;
+	MultiRoomResponseType_Success = 1;
+	MultiRoomResponseType_PrivateRoomNotFound = 2;
+	MultiRoomResponseType_PrivateRoomIsFull = 3;
+	MultiRoomResponseType_InviteNotFound = 4;
+	MultiRoomResponseType_AppVersionNotMatched = 5;
+	MultiRoomResponseType_BattleWinCountExceeded = 6;
+	MultiRoomResponseType_BattleConditionNotFulfilled = 7;
+}
+
+enum NotificationType {
+	NotificationType_None = 0;
+	NotificationType_Normal = 1;
+	NotificationType_Gorgeous = 2;
+}
+
+enum OverridePositioningLayoutType {
+	OverridePositioningLayoutType_None = 0;
+	OverridePositioningLayoutType_LL1 = 1;
+	OverridePositioningLayoutType_L2 = 2;
+	OverridePositioningLayoutType_L1M1 = 3;
+	OverridePositioningLayoutType_L1S2 = 4;
+	OverridePositioningLayoutType_L1S1 = 5;
+	OverridePositioningLayoutType_L1 = 6;
+	OverridePositioningLayoutType_M3 = 7;
+	OverridePositioningLayoutType_M2S1 = 8;
+	OverridePositioningLayoutType_M2 = 9;
+	OverridePositioningLayoutType_M1S2 = 10;
+	OverridePositioningLayoutType_M1S1 = 11;
+	OverridePositioningLayoutType_M1 = 12;
+	OverridePositioningLayoutType_S3 = 13;
+	OverridePositioningLayoutType_S2 = 14;
+	OverridePositioningLayoutType_S1 = 15;
+}
+
+enum ParameterType {
+	ParameterType_None = 0;
+	ParameterType_Hp = 1;
+	ParameterType_PhysicalAttack = 2;
+	ParameterType_MagicalAttack = 3;
+	ParameterType_PhysicalDefense = 4;
+	ParameterType_MagicalDefense = 5;
+	ParameterType_HealingPower = 6;
+	ParameterType_CriticalRate = 7;
+	ParameterType_CriticalPower = 8;
+}
+
+enum PartyRoleType {
+	PartyRoleType_None = 0;
+	PartyRoleType_Leader = 1;
+	PartyRoleType_Member = 2;
+}
+
+enum PartyType {
+	PartyType_None = 0;
+	PartyType_PartyStory = 1;
+	PartyType_PartySolo = 2;
+	PartyType_PartyMulti = 3;
+	PartyType_Temporary = 4;
+}
+
+enum PassiveSkillCategoryType {
+	PassiveSkillCategoryType_None = 0;
+	PassiveSkillCategoryType_Status = 1;
+	PassiveSkillCategoryType_ElementDamage = 2;
+	PassiveSkillCategoryType_ElementResist = 3;
+	PassiveSkillCategoryType_Extra = 4;
+}
+
+enum PassiveSkillFilterType {
+	PassiveSkillFilterType_None = 0;
+	PassiveSkillFilterType_HpMore = 1;
+	PassiveSkillFilterType_HpLess = 2;
+	PassiveSkillFilterType_Phase = 3;
+	PassiveSkillFilterType_Break = 6;
+	PassiveSkillFilterType_Tactics = 7;
+	PassiveSkillFilterType_TacticsLevel = 9;
+}
+
+enum PassiveSkillTriggerType {
+	PassiveSkillTriggerType_Always = 0;
+	PassiveSkillTriggerType_FirstHit = 2;
+	PassiveSkillTriggerType_HpChange = 3;
+	PassiveSkillTriggerType_PhaseState = 4;
+	PassiveSkillTriggerType_Break = 5;
+	PassiveSkillTriggerType_Tactics = 6;
+	PassiveSkillTriggerType_BattleStart = 7;
+	PassiveSkillTriggerType_WaveStart = 8;
+	PassiveSkillTriggerType_Critical = 9;
+	PassiveSkillTriggerType_NotesBreak = 10;
+}
+
+enum PassiveSkillType {
+	PassiveSkillType_None = 0;
+	PassiveSkillType_Parameter = 1;
+	PassiveSkillType_ElementDamage = 2;
+	PassiveSkillType_StatusConditionResistance = 3;
+	PassiveSkillType_AtbGaugeMax = 6;
+	PassiveSkillType_LastLeave = 7;
+	PassiveSkillType_ElemenResist = 8;
+	PassiveSkillType_LimitBreakDamage = 10;
+	PassiveSkillType_SummonDamage = 11;
+	PassiveSkillType_StatusConditionResistanceDuration = 12;
+	PassiveSkillType_StatusConditionResistanceAdditiveDuration = 13;
+	PassiveSkillType_BuffDebuffDuration = 16;
+	PassiveSkillType_BuffDebuffAdditiveDuration = 17;
+	PassiveSkillType_BuffDebuffResistance = 18;
+	PassiveSkillType_BuffDebuffResistanceDuration = 19;
+	PassiveSkillType_BuffDebuffResistanceAdditiveDuration = 20;
+	PassiveSkillType_AtbGauge = 21;
+	PassiveSkillType_PhysicalDamage = 22;
+	PassiveSkillType_MagicalDamage = 23;
+}
+
+enum PassiveSkillUsedType {
+	PassiveSkillUsedType_None = 0;
+	PassiveSkillUsedType_Weapon = 1;
+	PassiveSkillUsedType_Costume = 2;
+}
+
+enum PermanentBuffType {
+	PermanentBuffType_None = 0;
+	PermanentBuffType_Parameter = 1;
+	PermanentBuffType_ElementDamage = 2;
+}
+
+enum PhaseActionControlType {
+	PhaseActionControlType_None = 0;
+	PhaseActionControlType_Parallel = 1;
+	PhaseActionControlType_Serial = 2;
+}
+
+enum PhaseGimmickType {
+	PhaseGimmickType_None = 0;
+	PhaseGimmickType_Counter = 1;
+	PhaseGimmickType_LockOn = 2;
+	PhaseGimmickType_Barrier = 3;
+	PhaseGimmickType_Pyramid = 4;
+	PhaseGimmickType_PermanentBuff = 5;
+	PhaseGimmickType_Heal = 6;
+	PhaseGimmickType_GearChange = 7;
+	PhaseGimmickType_HeatUp = 8;
+	PhaseGimmickType_ResistanceChange = 9;
+	PhaseGimmickType_Musters = 10;
+	PhaseGimmickType_Escape = 11;
+	PhaseGimmickType_Request = 12;
+	PhaseGimmickType_NotesCount = 13;
+}
+
+enum PhaseTutorialTimingType {
+	PhaseTutorialTimingType_None = 0;
+	PhaseTutorialTimingType_Hit = 1;
+	PhaseTutorialTimingType_AnimationFinished = 2;
+}
+
+enum PlatformType {
+	PlatformType_Any = 0;
+	PlatformType_iOS = 1;
+	PlatformType_Android = 2;
+	PlatformType_Steam = 5;
+}
+
+enum PlayRecordType {
+	PlayRecordType_None = 0;
+	PlayRecordType_GameStartDatetime = 1;
+	PlayRecordType_TotalLoginCount = 2;
+	PlayRecordType_SoloBattleClearCount = 3;
+	PlayRecordType_HighestCombatPower = 4;
+	PlayRecordType_SummonCount = 5;
+	PlayRecordType_SummonSkillCount = 6;
+	PlayRecordType_LimitBreakCount = 7;
+	PlayRecordType_ConsumptionStaminaBattleClearCount = 8;
+	PlayRecordType_AnotherDungeonHighRankClearCount = 9;
+	PlayRecordType_MultiBattleClearCount = 10;
+	PlayRecordType_ChocoboExpeditionCount = 11;
+	PlayRecordType_CraftCount = 12;
+	PlayRecordType_HighestMultiCombatPower = 13;
+	PlayRecordType_MultiBattleContributionTotalDamage = 14;
+	PlayRecordType_MultiBattleContributionMaxBlowDamage = 15;
+	PlayRecordType_MultiBattleContributionNotesBreakCount = 16;
+	PlayRecordType_MultiBattleContributionWeakElementHitCount = 17;
+	PlayRecordType_MultiBattleContributionTotalHpHeal = 18;
+	PlayRecordType_MultiBattleContributionTotalStatusConditionHealCount = 19;
+	PlayRecordType_MultiBattleContributionTotalAtbCost = 20;
+	PlayRecordType_MultiBattleContributionLimitBreakCount = 21;
+	PlayRecordType_MultiBattleContributionLimitComboCount = 22;
+	PlayRecordType_MultiBattleContributionTacticsSwitchingCount = 23;
+	PlayRecordType_MultiBattleContributionTacticsLevelMaxCount = 24;
+	PlayRecordType_MultiBattleContributionBuffSuccessCount = 25;
+	PlayRecordType_MultiBattleContributionBuffOffsetCount = 26;
+	PlayRecordType_MultiBattleContributionDebuffSuccessCount = 27;
+	PlayRecordType_MultiBattleContributionDebuffOffsetCount = 28;
+	PlayRecordType_MultiBattleContributionStatusConditionSuccessCount = 29;
+	PlayRecordType_TowerFloorFirstClearCount = 30;
+	PlayRecordType_AnotherDungeonClearCount = 31;
+	PlayRecordType_DailyQuestClearCount = 32;
+	PlayRecordType_SummonQuestClearCount = 33;
+	PlayRecordType_CraftMateriaHighQualityCount = 34;
+	PlayRecordType_WeaponLevelMax = 35;
+	PlayRecordType_WeaponUpgradeCountMax = 36;
+}
+
+enum QualityType {
+	QualityType_None = 0;
+	QualityType_One = 1;
+	QualityType_Two = 2;
+	QualityType_Three = 3;
+	QualityType_Four = 4;
+	QualityType_Five = 5;
+}
+
+enum RarityType {
+	RarityType_None = 0;
+	RarityType_R = 1;
+	RarityType_SR = 2;
+	RarityType_SSR = 3;
+}
+
+enum RecoveryType {
+	RecoveryType_None = 0;
+	RecoveryType_Stamina = 1;
+	RecoveryType_AnotherDungeonKey = 2;
+	RecoveryType_StaminaBoost = 3;
+}
+
+enum ResetDisplayType {
+	ResetDisplayType_None = 0;
+	ResetDisplayType_Daily = 1;
+	ResetDisplayType_Weekly = 2;
+	ResetDisplayType_Monthly = 3;
+}
+
+enum RewardChooseType {
+	RewardChooseType_None = 0;
+	RewardChooseType_All = 1;
+	RewardChooseType_Lot = 2;
+	RewardChooseType_LotUnique = 3;
+	RewardChooseType_Probability = 4;
+}
+
+enum RewardHintType {
+	RewardHintType_None = 0;
+	RewardHintType_Story = 1;
+	RewardHintType_SoloAreaBattle = 2;
+	RewardHintType_MultiAreaBattle = 3;
+	RewardHintType_AnotherDungeon = 4;
+	RewardHintType_Chocobo = 5;
+	RewardHintType_Mission = 6;
+	RewardHintType_Shop = 7;
+	RewardHintType_Exchange = 8;
+	RewardHintType_EventSoloBattle = 9;
+	RewardHintType_EventMultiBattle = 10;
+	RewardHintType_CrisisDungeon = 11;
+	RewardHintType_SeasonPass = 12;
+}
+
+enum RewardObtainType {
+	RewardObtainType_None = 0;
+	RewardObtainType_Debug = 1;
+	RewardObtainType_Apology = 2;
+	RewardObtainType_Register = 3;
+	RewardObtainType_StoryFirst = 4;
+	RewardObtainType_AreaSolo = 5;
+	RewardObtainType_AreaSoloFirst = 6;
+	RewardObtainType_AreaMulti = 7;
+	RewardObtainType_AreaMultiFirst = 8;
+	RewardObtainType_Another = 9;
+	RewardObtainType_AnotherFirst = 10;
+	RewardObtainType_Battle = 11;
+	RewardObtainType_Treasure = 12;
+	RewardObtainType_Gacha = 13;
+	RewardObtainType_Login = 14;
+	RewardObtainType_Shop = 15;
+	RewardObtainType_Mission = 16;
+	RewardObtainType_WeaponRelease = 17;
+	RewardObtainType_Sell = 18;
+	RewardObtainType_Craft = 19;
+	RewardObtainType_ChocoboExpedition = 20;
+	RewardObtainType_WeaponStockExchange = 21;
+	RewardObtainType_StaminaRecovery = 22;
+	RewardObtainType_MateriaEnhance = 23;
+	RewardObtainType_WeaponEnhance = 24;
+	RewardObtainType_AreaMultiAdditional = 25;
+	RewardObtainType_ExchangeAnotherDungeonKey = 26;
+	RewardObtainType_BridgeRecovery = 27;
+	RewardObtainType_EventScenarioEpisodeFirst = 28;
+	RewardObtainType_EventSolo = 29;
+	RewardObtainType_EventSoloFirst = 30;
+	RewardObtainType_EventMulti = 31;
+	RewardObtainType_EventMultiFirst = 32;
+	RewardObtainType_EventMultiAdditional = 33;
+	RewardObtainType_FirstStoryParty = 34;
+	RewardObtainType_ChocoboFarmTreasure = 35;
+	RewardObtainType_BoostRecovery = 36;
+	RewardObtainType_Advertisement = 37;
+	RewardObtainType_ChocoboSell = 38;
+	RewardObtainType_AnotherFirstClear = 39;
+	RewardObtainType_EventScoreDungeonRanking = 40;
+	RewardObtainType_EventScoreDungeonScore = 41;
+	RewardObtainType_ScoreDungeon = 42;
+	RewardObtainType_ScoreDungeonFirst = 43;
+	RewardObtainType_DungeonDramaSelection = 44;
+	RewardObtainType_MissionBonus = 45;
+	RewardObtainType_TreasureStory = 46;
+	RewardObtainType_TreasureAnother = 47;
+	RewardObtainType_Exchange = 48;
+	RewardObtainType_FirstMeeting = 49;
+	RewardObtainType_BoxGacha = 50;
+	RewardObtainType_TreasureCrisis = 51;
+	RewardObtainType_TreasureScoreDungeon = 52;
+	RewardObtainType_DungeonMission = 53;
+	RewardObtainType_DailyQuest = 54;
+	RewardObtainType_TowerFloorFirst = 55;
+	RewardObtainType_TowerFloorClear = 56;
+	RewardObtainType_SeasonPass = 57;
+	RewardObtainType_Tutorial = 58;
+	RewardObtainType_CharacterStorySectionFirstClear = 59;
+	RewardObtainType_CharacterStoryEpisodeFirstClear = 60;
+	RewardObtainType_EcPass = 61;
+	RewardObtainType_Crisis = 62;
+	RewardObtainType_CrisisFirst = 63;
+	RewardObtainType_CrisisFirstClear = 64;
+	RewardObtainType_ScoreDungeonFirstClear = 65;
+	RewardObtainType_Cs = 66;
+}
+
+enum RewardType {
+	RewardType_None = 0;
+	RewardType_Item = 1;
+	RewardType_Character = 2;
+	RewardType_Materia = 3;
+	RewardType_Accessory = 4;
+	RewardType_Weapon = 5;
+	RewardType_AccessoryRecipe = 6;
+	RewardType_MateriaRecipe = 7;
+	RewardType_Summon = 8;
+	RewardType_Costume = 9;
+	RewardType_Stone = 10;
+	RewardType_InstantItem = 11;
+	RewardType_Stamina = 12;
+	RewardType_Exp = 13;
+	RewardType_SpecialSkill = 14;
+	RewardType_Chocobo = 15;
+	RewardType_MissionGroupBonusPoint = 16;
+	RewardType_Boost = 17;
+	RewardType_Honor = 18;
+	RewardType_HomeBackground = 19;
+	RewardType_EventStoryLevelExp = 20;
+	RewardType_SeasonPassPoint = 21;
+	RewardType_EcPass = 22;
+}
+
+enum SampleModelType {
+	SampleModelType_Type0 = 0;
+	SampleModelType_Type1 = 1;
+	SampleModelType_Type2 = 2;
+	SampleModelType_Type3 = 3;
+}
+
+enum ScoreOptionSkillType {
+	ScoreOptionSkillType_None = 0;
+	ScoreOptionSkillType_Materia = 1;
+	ScoreOptionSkillType_Heal = 2;
+	ScoreOptionSkillType_Buff = 3;
+	ScoreOptionSkillType_DeBuff = 4;
+	ScoreOptionSkillType_Poison = 5;
+	ScoreOptionSkillType_Silence = 6;
+	ScoreOptionSkillType_Darkness = 7;
+	ScoreOptionSkillType_Stun = 8;
+}
+
+enum ScoreOptionType {
+	ScoreOptionType_None = 0;
+	ScoreOptionType_Character = 1;
+	ScoreOptionType_Party = 2;
+	ScoreOptionType_BanSkill = 3;
+	ScoreOptionType_WithoutInstantItem = 4;
+	ScoreOptionType_ExBoss = 5;
+}
+
+enum SeasonPassRewardChooseType {
+	SeasonPassRewardChooseType_None = 0;
+	SeasonPassRewardChooseType_Normal = 1;
+	SeasonPassRewardChooseType_Select = 2;
+}
+
+enum SeasonPassRewardType {
+	SeasonPassRewardType_None = 0;
+	SeasonPassRewardType_Normal = 1;
+	SeasonPassRewardType_Extra = 2;
+}
+
+enum SettingType {
+	SettingType_None = 0;
+	SettingType_AutoWeaponMedalExchange = 1;
+}
+
+enum ShopDisplayType {
+	ShopDisplayType_None = 0;
+	ShopDisplayType_Single = 1;
+	ShopDisplayType_Multi = 2;
+	ShopDisplayType_SelectLater = 3;
+	ShopDisplayType_SingleDetail = 4;
+	ShopDisplayType_SingleRich = 5;
+}
+
+enum ShopEmptyBehaviorType {
+	ShopEmptyBehaviorType_None = 0;
+	ShopEmptyBehaviorType_MoveToBottom = 1;
+	ShopEmptyBehaviorType_Remove = 2;
+}
+
+enum ShopGroupCategory {
+	ShopGroupCategory_None = 0;
+	ShopGroupCategory_Shop = 1;
+	ShopGroupCategory_Exchange = 2;
+	ShopGroupCategory_TicketExchange = 3;
+	ShopGroupCategory_Stone = 4;
+	ShopGroupCategory_SeasonPass = 5;
+	ShopGroupCategory_DungeonSaveCrystal = 6;
+	ShopGroupCategory_EcPass = 7;
+}
+
+enum ShopItemType {
+	ShopItemType_None = 0;
+	ShopItemType_CharacterPiece = 2;
+	ShopItemType_SummonPiece = 3;
+	ShopItemType_Stone = 4;
+	ShopItemType_DungeonSaveCrystal = 5;
+}
+
+enum ShopNotiType {
+	ShopNotiType_None = 0;
+	ShopNotiType_New = 1;
+	ShopNotiType_NewWear = 2;
+}
+
+enum SkillAdditionalType {
+	SkillAdditionalType_None = 0;
+	SkillAdditionalType_DamageChange = 1;
+	SkillAdditionalType_Cost = 2;
+	SkillAdditionalType_SpecialGauge = 3;
+	SkillAdditionalType_Recover = 4;
+	SkillAdditionalType_ReduceMaxHP = 5;
+	SkillAdditionalType_RecoverMaxHP = 6;
+	SkillAdditionalType_SpecialGaugeChange = 7;
+	SkillAdditionalType_AtbChargeChange = 8;
+	SkillAdditionalType_BreakNotes = 9;
+	SkillAdditionalType_LastLeave = 10;
+	SkillAdditionalType_HPDrain = 11;
+	SkillAdditionalType_SelfDamage = 12;
+	SkillAdditionalType_FixedCriticalRate = 13;
+	SkillAdditionalType_AddCriticalRate = 14;
+}
+
+enum SkillAtbChangeEffectType {
+	SkillAtbChangeEffectType_None = 0;
+	SkillAtbChangeEffectType_Add = 1;
+	SkillAtbChangeEffectType_Remove = 2;
+	SkillAtbChangeEffectType_Overwrite = 3;
+}
+
+enum SkillAttackType {
+	SkillAttackType_None = 0;
+	SkillAttackType_Physical = 1;
+	SkillAttackType_Magical = 2;
+	SkillAttackType_Both = 3;
+	SkillAttackType_Heal = 4;
+	SkillAttackType_Resurrection = 5;
+}
+
+enum SkillBaseAttackType {
+	SkillBaseAttackType_None = 0;
+	SkillBaseAttackType_Physical = 1;
+	SkillBaseAttackType_Magical = 2;
+	SkillBaseAttackType_Both = 3;
+}
+
+enum SkillBuffDeBuffType {
+	SkillBuffDeBuffType_None = 0;
+	SkillBuffDeBuffType_PhysicalAttackUp = 1;
+	SkillBuffDeBuffType_PhysicalDefenseUp = 2;
+	SkillBuffDeBuffType_MagicalAttackUp = 3;
+	SkillBuffDeBuffType_MagicalDefenseUp = 4;
+	SkillBuffDeBuffType_PhysicalAttackDown = 5;
+	SkillBuffDeBuffType_PhysicalDefenseDown = 6;
+	SkillBuffDeBuffType_MagicalAttackDown = 7;
+	SkillBuffDeBuffType_MagicalDefenseDown = 8;
+	SkillBuffDeBuffType_HealingPowerUp = 9;
+	SkillBuffDeBuffType_HealingPowerDown = 10;
+	SkillBuffDeBuffType_FireElementResistanceUp = 11;
+	SkillBuffDeBuffType_FireElementResistanceDown = 12;
+	SkillBuffDeBuffType_IceElementResistanceUp = 13;
+	SkillBuffDeBuffType_IceElementResistanceDown = 14;
+	SkillBuffDeBuffType_ThunderElementResistanceUp = 15;
+	SkillBuffDeBuffType_ThunderElementResistanceDown = 16;
+	SkillBuffDeBuffType_EarthElementResistanceUp = 17;
+	SkillBuffDeBuffType_EarthElementResistanceDown = 18;
+	SkillBuffDeBuffType_WaterElementResistanceUp = 19;
+	SkillBuffDeBuffType_WaterElementResistanceDown = 20;
+	SkillBuffDeBuffType_WindElementResistanceUp = 21;
+	SkillBuffDeBuffType_WindElementResistanceDown = 22;
+	SkillBuffDeBuffType_HolyElementResistanceUp = 23;
+	SkillBuffDeBuffType_HolyElementResistanceDown = 24;
+	SkillBuffDeBuffType_DarkElementResistanceUp = 25;
+	SkillBuffDeBuffType_DarkElementResistanceDown = 26;
+}
+
+enum SkillCancelEffectType {
+	SkillCancelEffectType_None = 0;
+	SkillCancelEffectType_BuffDebuff = 1;
+	SkillCancelEffectType_StatusCondition = 2;
+}
+
+enum SkillCancelType {
+	SkillCancelType_None = 0;
+	SkillCancelType_All = 1;
+	SkillCancelType_SampleOne = 2;
+}
+
+enum SkillDamageType {
+	SkillDamageType_None = 0;
+	SkillDamageType_Normal = 1;
+	SkillDamageType_Percent = 2;
+	SkillDamageType_Fixed = 3;
+	SkillDamageType_CurrentHpRatio = 4;
+	SkillDamageType_ReduceHpToSpecify = 5;
+}
+
+enum SkillEffectDescriptionType {
+	SkillEffectDescriptionType_None = 0;
+	SkillEffectDescriptionType_Positive = 1;
+	SkillEffectDescriptionType_Negative = 2;
+}
+
+enum SkillEffectType {
+	SkillEffectType_None = 0;
+	SkillEffectType_Damage = 1;
+	SkillEffectType_StatusCondition = 2;
+	SkillEffectType_BuffDeBuff = 3;
+	SkillEffectType_Phase = 4;
+	SkillEffectType_StatusChange = 5;
+	SkillEffectType_Cancel = 6;
+	SkillEffectType_Additional = 7;
+	SkillEffectType_Random = 9;
+	SkillEffectType_PermanentBuff = 10;
+	SkillEffectType_ResetPermanentBuff = 11;
+	SkillEffectType_ResistChange = 12;
+	SkillEffectType_ResetResistChange = 13;
+	SkillEffectType_Escape = 14;
+	SkillEffectType_OpponentAnalysis = 15;
+	SkillEffectType_AtbChange = 16;
+	SkillEffectType_ForceGaugeStart = 17;
+	SkillEffectType_ForceGaugeChange = 18;
+	SkillEffectType_ForceGaugeFinish = 19;
+	SkillEffectType_Reinforcement = 20;
+	SkillEffectType_RelocationReady = 21;
+	SkillEffectType_Movie = 22;
+	SkillEffectType_Transformation = 23;
+}
+
+enum SkillForceGaugeParameterEffectType {
+	SkillForceGaugeParameterEffectType_None = 0;
+	SkillForceGaugeParameterEffectType_Parameter = 1;
+	SkillForceGaugeParameterEffectType_ElementAttack = 2;
+	SkillForceGaugeParameterEffectType_ElementDefense = 3;
+}
+
+enum SkillForceGaugeTakenDamageCalcType {
+	SkillForceGaugeTakenDamageCalcType_None = 0;
+	SkillForceGaugeTakenDamageCalcType_Fixed = 1;
+	SkillForceGaugeTakenDamageCalcType_DamageRatio = 2;
+}
+
+enum SkillForceGaugeTakenDamageEffectType {
+	SkillForceGaugeTakenDamageEffectType_None = 0;
+	SkillForceGaugeTakenDamageEffectType_BaseAttack = 1;
+	SkillForceGaugeTakenDamageEffectType_Element = 2;
+	SkillForceGaugeTakenDamageEffectType_Critical = 3;
+	SkillForceGaugeTakenDamageEffectType_All = 4;
+}
+
+enum SkillGimmickCounterType {
+	SkillGimmickCounterType_None = 0;
+	SkillGimmickCounterType_Physical = 1;
+	SkillGimmickCounterType_Magical = 2;
+	SkillGimmickCounterType_Both = 3;
+}
+
+enum SkillHealType {
+	SkillHealType_None = 0;
+	SkillHealType_HpRecover = 1;
+	SkillHealType_Buff = 2;
+	SkillHealType_StatusRecover = 3;
+}
+
+enum SkillNotesCombinationType {
+	SkillNotesCombinationType_None = 0;
+	SkillNotesCombinationType_All = 1;
+	SkillNotesCombinationType_Or = 2;
+}
+
+enum SkillNotesDisplayType {
+	SkillNotesDisplayType_None = 0;
+	SkillNotesDisplayType_Hide = 1;
+}
+
+enum SkillNotesType {
+	SkillNotesType_None = 0;
+	SkillNotesType_MarkA = 1;
+	SkillNotesType_MarkB = 2;
+	SkillNotesType_MarkC = 3;
+	SkillNotesType_MarkD = 4;
+	SkillNotesType_MarkE = 5;
+}
+
+enum SkillRequestSuccessConditionType {
+	SkillRequestSuccessConditionType_None = 0;
+	SkillRequestSuccessConditionType_SpecialSkill = 1;
+	SkillRequestSuccessConditionType_Element = 2;
+	SkillRequestSuccessConditionType_BaseAttack = 3;
+	SkillRequestSuccessConditionType_Debuff = 4;
+	SkillRequestSuccessConditionType_Notes = 5;
+	SkillRequestSuccessConditionType_StatusCondition = 6;
+}
+
+enum SkillScoreCalculateType {
+	SkillScoreCalculateType_None = 0;
+	SkillScoreCalculateType_Total = 1;
+	SkillScoreCalculateType_Average = 2;
+}
+
+enum SkillSpecialGaugeBonusType {
+	SkillSpecialGaugeBonusType_None = 0;
+	SkillSpecialGaugeBonusType_Weak = 1;
+	SkillSpecialGaugeBonusType_CritialBonus = 2;
+	SkillSpecialGaugeBonusType_NotesBreak = 3;
+	SkillSpecialGaugeBonusType_PlayerAttackBuff = 4;
+	SkillSpecialGaugeBonusType_EnemyDefenseDebuff = 5;
+}
+
+enum SkillSpecialType {
+	SkillSpecialType_None = 0;
+	SkillSpecialType_LimitBreak = 1;
+	SkillSpecialType_Summon = 2;
+}
+
+enum SkillStatusChangeType {
+	SkillStatusChangeType_None = 0;
+	SkillStatusChangeType_Regenerate = 1;
+	SkillStatusChangeType_Provocation = 2;
+	SkillStatusChangeType_Reflect = 3;
+	SkillStatusChangeType_RegenerateHealPower = 4;
+}
+
+enum SkillStatusConditionType {
+	SkillStatusConditionType_None = 0;
+	SkillStatusConditionType_Poison = 1;
+	SkillStatusConditionType_Sadness = 2;
+	SkillStatusConditionType_Silence = 3;
+	SkillStatusConditionType_Darkness = 4;
+	SkillStatusConditionType_Stun = 5;
+	SkillStatusConditionType_Pain = 6;
+	SkillStatusConditionType_Forget = 7;
+}
+
+enum SkillTargetType {
+	SkillTargetType_None = 0;
+	SkillTargetType_OpponentSingle = 1;
+	SkillTargetType_OpponentAll = 2;
+	SkillTargetType_OwnSingle = 3;
+	SkillTargetType_OwnAll = 4;
+	SkillTargetType_Self = 5;
+	SkillTargetType_Friend = 6;
+	SkillTargetType_AllTarget = 7;
+}
+
+enum SkillTriggerType {
+	SkillTriggerType_None = 0;
+	SkillTriggerType_Hit = 1;
+	SkillTriggerType_CriticalHit = 2;
+	SkillTriggerType_NotesBreakHit = 3;
+	SkillTriggerType_HpRangeHit = 4;
+	SkillTriggerType_ParentTrigger = 5;
+	SkillTriggerType_HpRangeAlways = 6;
+	SkillTriggerType_StatusesCount = 7;
+	SkillTriggerType_WeakHit = 8;
+	SkillTriggerType_ResistHit = 9;
+	SkillTriggerType_HasCondition = 11;
+	SkillTriggerType_NoWeakHit = 12;
+	SkillTriggerType_Tactics = 13;
+}
+
+enum StaminaBoostType {
+	StaminaBoostType_None = 0;
+	StaminaBoostType_Normal = 1;
+	StaminaBoostType_EcPass = 2;
+}
+
+enum StatusDisplayType {
+	StatusDisplayType_None = 0;
+	StatusDisplayType_Normal = 1;
+	StatusDisplayType_Large = 2;
+}
+
+enum StoneId {
+	StoneId_None = 0;
+	StoneId_PaidId = 1;
+	StoneId_FreeId = 2;
+}
+
+enum StoreType {
+	StoreType_None = 0;
+	StoreType_IOS = 1;
+	StoreType_Android = 2;
+	StoreType_Steam = 5;
+}
+
+enum StoryEpisodeType {
+	StoryEpisodeType_None = 0;
+	StoryEpisodeType_Drama = 1;
+	StoryEpisodeType_Dungeon = 2;
+	StoryEpisodeType_Battle = 3;
+}
+
+enum StoryMapType {
+	StoryMapType_None = 0;
+	StoryMapType_World = 1;
+	StoryMapType_WorldWithRadior = 2;
+	StoryMapType_Midgar = 3;
+	StoryMapType_Radior = 4;
+	StoryMapType_WorldUnknown = 999;
+}
+
+enum StoryModeType {
+	StoryModeType_None = 0;
+	StoryModeType_StoryParty = 1;
+	StoryModeType_FreeParty = 2;
+	StoryModeType_CharacterStoryParty = 3;
+}
+
+enum StorySectionType {
+	StorySectionType_None = 0;
+	StorySectionType_Main = 1;
+	StorySectionType_Sub = 2;
+	StorySectionType_Extra = 3;
+}
+
+enum SummonBoardNodeType {
+	SummonBoardNodeType_None = 0;
+	SummonBoardNodeType_Enhance = 1;
+	SummonBoardNodeType_Skill = 2;
+}
+
+enum SupportConditionType {
+	SupportConditionType_None = 0;
+	SupportConditionType_Self = 1;
+	SupportConditionType_Other = 2;
+}
+
+enum SupportEffectFilterType {
+	SupportEffectFilterType_None = 0;
+	SupportEffectFilterType_TacticsType = 1;
+	SupportEffectFilterType_TacticsLevel = 2;
+	SupportEffectFilterType_SkillNotesType = 3;
+}
+
+enum SupportEffectTriggerType {
+	SupportEffectTriggerType_Always = 0;
+	SupportEffectTriggerType_TacticsChange = 1;
+}
+
+enum SupportEffectType {
+	SupportEffectType_None = 0;
+	SupportEffectType_Damage = 1;
+	SupportEffectType_Cost = 2;
+	SupportEffectType_Notes = 3;
+	SupportEffectType_Healing = 4;
+	SupportEffectType_Resurrection = 5;
+	SupportEffectType_StatusConditionHealing = 6;
+	SupportEffectType_SelfHealing = 7;
+	SupportEffectType_SelfBuff = 8;
+	SupportEffectType_EffectDuration = 9;
+	SupportEffectType_DuplicationDuration = 10;
+	SupportEffectType_AdditionalBuff = 11;
+	SupportEffectType_RandomBuff = 12;
+	SupportEffectType_AllTarget = 13;
+	SupportEffectType_NotesBreakBonus = 14;
+}
+
+enum TacticsEffectType {
+	TacticsEffectType_None = 0;
+	TacticsEffectType_ParameterChange = 1;
+	TacticsEffectType_AtbSpeedChange = 2;
+	TacticsEffectType_StatusConditionResist = 3;
+	TacticsEffectType_BreakNotesChange = 4;
+	TacticsEffectType_MinBreakNotesCountChange = 5;
+	TacticsEffectType_Regenerate = 6;
+	TacticsEffectType_DamageMagnification = 7;
+	TacticsEffectType_TakenDamageMagnification = 8;
+}
+
+enum TacticsType {
+	TacticsType_None = 0;
+	TacticsType_Attack = 1;
+	TacticsType_Defense = 2;
+}
+
+enum TipsGroupType {
+	TipsGroupType_None = 0;
+	TipsGroupType_Story = 1;
+	TipsGroupType_GameOver = 2;
+	TipsGroupType_BattleDungeon = 3;
+	TipsGroupType_AnotherDungeonClear = 4;
+	TipsGroupType_AnotherDungeonGameOver = 5;
+	TipsGroupType_Other = 6;
+	TipsGroupType_CrisisDungeonGameOver = 7;
+}
+
+enum TowerFloorDisplayType {
+	TowerFloorDisplayType_None = 0;
+	TowerFloorDisplayType_Normal = 1;
+	TowerFloorDisplayType_SubBoss = 2;
+	TowerFloorDisplayType_Boss = 3;
+}
+
+enum TransitionType {
+	TransitionType_None = 0;
+	TransitionType_Home = 1;
+	TransitionType_Event = 2;
+	TransitionType_Shop = 6;
+	TransitionType_AreaSoloBattle = 10;
+	TransitionType_AreaMultiBattle = 11;
+	TransitionType_Gacha = 12;
+	TransitionType_Announcement = 14;
+	TransitionType_GachaDetail = 15;
+	TransitionType_Chocobo = 21;
+	TransitionType_Profile = 23;
+	TransitionType_Mission = 24;
+	TransitionType_StoryEpisode = 25;
+	TransitionType_EventSoloBattle = 26;
+	TransitionType_EventMultiBattle = 27;
+	TransitionType_AnotherDungeon = 28;
+	TransitionType_GrowthBoardCharacter = 29;
+	TransitionType_GrowthBoardSummon = 30;
+	TransitionType_ShopTop = 31;
+	TransitionType_StoryTitle = 32;
+	TransitionType_AnotherDungeonTop = 33;
+	TransitionType_AreaSoloBattleTop = 34;
+	TransitionType_AreaMultiBattleTop = 35;
+	TransitionType_GachaTop = 36;
+	TransitionType_AnnouncementTop = 37;
+	TransitionType_WeaponTop = 38;
+	TransitionType_MateriaTop = 39;
+	TransitionType_CraftTop = 40;
+	TransitionType_AccessoryTop = 41;
+	TransitionType_PartyTop = 42;
+	TransitionType_FriendList = 43;
+	TransitionType_MissionTop = 44;
+	TransitionType_GiftBox = 45;
+	TransitionType_MateriaEnhance = 46;
+	TransitionType_MateriaEvolve = 47;
+	TransitionType_MateriaCraft = 48;
+	TransitionType_AccessoryCraft = 49;
+	TransitionType_MateriaCraftOption = 50;
+	TransitionType_LBMission = 51;
+	TransitionType_TowerFloor = 52;
+	TransitionType_ExternalLink = 53;
+	TransitionType_CrisisDungeon = 54;
+	TransitionType_EventTop = 55;
+	TransitionType_SeasonPass = 56;
+	TransitionType_WeaponStock = 57;
+	TransitionType_EventBattleTop = 58;
+	TransitionType_MissionDetail = 59;
+}
+
+enum TutorialPopupType {
+	TutorialPopupType_None = 0;
+	TutorialPopupType_Text = 1;
+	TutorialPopupType_Image = 2;
+	TutorialPopupType_Chara = 3;
+	TutorialPopupType_Tap = 4;
+	TutorialPopupType_Movie = 5;
+	TutorialPopupType_Hint = 6;
+}
+
+enum TutorialStepType {
+	TutorialStepType_None = 0;
+	TutorialStepType_Initial = 1;
+	TutorialStepType_PartyStory = 2;
+	TutorialStepType_PartyBattle = 3;
+	TutorialStepType_PartyMulti = 4;
+	TutorialStepType_PartyMainWeapon1 = 5;
+	TutorialStepType_PartyMainWeapon2 = 6;
+	TutorialStepType_PartyMateria = 7;
+	TutorialStepType_PartySubWeapon = 8;
+	TutorialStepType_PartyAccessory = 9;
+	TutorialStepType_PartyCostume = 10;
+	TutorialStepType_PartyLB = 11;
+	TutorialStepType_PartyRecommendation = 12;
+	TutorialStepType_CharacterStatusStream = 13;
+	TutorialStepType_CharacterAffection = 14;
+	TutorialStepType_CharacterStory = 15;
+	TutorialStepType_WeaponEnhance = 16;
+	TutorialStepType_WeaponRelease = 17;
+	TutorialStepType_WeaponRarityUp = 18;
+	TutorialStepType_WeaponRankUp = 19;
+	TutorialStepType_WeaponLimitBrake = 20;
+	TutorialStepType_WeaponStock = 21;
+	TutorialStepType_WeaponMedalExchange = 22;
+	TutorialStepType_MateriaEnhance = 23;
+	TutorialStepType_MateriaCraft = 24;
+	TutorialStepType_AccessoryCraft = 25;
+	TutorialStepType_ChocoboExpedition = 26;
+	TutorialStepType_ChocoboGrowth = 27;
+	TutorialStepType_ChocoboExchange = 28;
+	TutorialStepType_MissionSeasonPass = 29;
+	TutorialStepType_LBMission = 30;
+	TutorialStepType_Summon = 31;
+	TutorialStepType_SummonStatusStream = 32;
+	TutorialStepType_Collection = 33;
+	TutorialStepType_Guild = 34;
+	TutorialStepType_AreaBattle = 35;
+	TutorialStepType_MultiBattle = 36;
+	TutorialStepType_AnotherDungeon = 37;
+	TutorialStepType_Shop = 38;
+	TutorialStepType_ExchangePiece = 39;
+	TutorialStepType_ExchangeWeaponMedal = 40;
+	TutorialStepType_ExchangeHardMedal = 41;
+	TutorialStepType_ExchangeLegendWeapon = 42;
+	TutorialStepType_Gacha = 43;
+	TutorialStepType_AreaBattleRelease = 44;
+	TutorialStepType_ChocoboRelease = 45;
+	TutorialStepType_Chocobo = 46;
+	TutorialStepType_ChocoboMedal = 47;
+	TutorialStepType_AnotherDungeonIngame = 101;
+	TutorialStepType_AnotherDungeonRelease = 102;
+	TutorialStepType_BattleRaize = 103;
+	TutorialStepType_Craft = 104;
+	TutorialStepType_LBMissionRelease = 105;
+	TutorialStepType_MateriaIndex = 106;
+	TutorialStepType_MateriaRelease = 107;
+	TutorialStepType_MultiBattleRelease = 108;
+	TutorialStepType_Party = 109;
+	TutorialStepType_PartyTop = 110;
+	TutorialStepType_CharacterStatusStreamRelease = 111;
+	TutorialStepType_SummonIndex = 112;
+	TutorialStepType_SummonMissionRelease = 113;
+	TutorialStepType_WeaponIndex = 114;
+	TutorialStepType_CharacterIndex = 115;
+	TutorialStepType_MateriaEvolve = 116;
+	TutorialStepType_CraftOption = 117;
+	TutorialStepType_GuideMission = 118;
+	TutorialStepType_StaminaBoost = 119;
+	TutorialStepType_PartySelect = 120;
+	TutorialStepType_PartyDetail = 121;
+	TutorialStepType_BattleAuto = 122;
+	TutorialStepType_BattleEnemyAllCounter = 123;
+	TutorialStepType_MultiBattleResult = 124;
+	TutorialStepType_ItemIndex = 125;
+	TutorialStepType_TowerRelease = 126;
+	TutorialStepType_Tower = 127;
+	TutorialStepType_BattleControlCharacter = 128;
+	TutorialStepType_BattleEnemyMagicalCounter = 129;
+	TutorialStepType_BattleEnemyResistChange = 130;
+	TutorialStepType_BattleEnemyPyramid = 131;
+	TutorialStepType_BattleEnemyLockOn = 132;
+	TutorialStepType_BattleEnemyPermanentBuff = 133;
+	TutorialStepType_BattleEnemyRegenerate = 134;
+	TutorialStepType_BattleEnemyGearChange = 135;
+	TutorialStepType_BattleEnemyReinforcement = 136;
+	TutorialStepType_BattleEnemyHeatUp = 137;
+	TutorialStepType_BattleEnemyHideNotes = 138;
+	TutorialStepType_BattleEnemyRequest = 139;
+	TutorialStepType_BattleEnemyForceGauge = 140;
+	TutorialStepType_CrisisDungeonRelease = 141;
+	TutorialStepType_CrisisDungeon = 142;
+	TutorialStepType_BattleEnemyForceGaugeCharge = 143;
+	TutorialStepType_BattleEnemyForceGaugeHeat = 144;
+	TutorialStepType_BattleEnemyForceGaugeIceAge = 145;
+	TutorialStepType_BattleEnemyForceGaugeLighting = 146;
+	TutorialStepType_BattleEnemyForceGaugeBalance = 147;
+	TutorialStepType_BattleEnemyForceGaugeMegaFlare = 148;
+	TutorialStepType_BattleEnemyPyramidWatermelon = 149;
+	TutorialStepType_BattleEnemyHeatUpWatermelon = 150;
+	TutorialStepType_BattleEnemyNotesGuard = 151;
+	TutorialStepType_MateriaEvolveRelease = 152;
+	TutorialStepType_SummonQuestRelease = 153;
+	TutorialStepType_SummonQuest = 154;
+	TutorialStepType_FirstMeeting = 155;
+	TutorialStepType_CrisisDungeonIngame = 156;
+	TutorialStepType_DailyQuestRelease = 157;
+	TutorialStepType_DailyQuest = 158;
+	TutorialStepType_CharacterStoryRelease = 159;
+	TutorialStepType_HomeBackground = 160;
+	TutorialStepType_GachaStampSheet = 161;
+	TutorialStepType_SeasonPass = 162;
+	TutorialStepType_StoryExtra = 163;
+	TutorialStepType_BattleEnemySignGuard = 164;
+	TutorialStepType_BattleEnemyProvocation = 165;
+	TutorialStepType_BattleEnemyBlaze = 166;
+	TutorialStepType_BattleEnemyForceGaugeFlying = 167;
+	TutorialStepType_BattleEnemyForceGaugeRockArmor = 168;
+}
+
+enum UserBanType {
+	UserBanType_None = 0;
+	UserBanType_Cheat = 1;
+	UserBanType_UserRequested = 2;
+	UserBanType_Temporary = 3;
+}
+
+enum UserTimeType {
+	UserTimeType_None = 0;
+	UserTimeType_Create = 1;
+	UserTimeType_Login = 2;
+	UserTimeType_AnotherDungeonKey = 4;
+	UserTimeType_LoginBonus = 5;
+	UserTimeType_TutorialFinish = 6;
+	UserTimeType_DailyQuestReset = 7;
+}
+
+enum WeaponGetType {
+	WeaponGetType_None = 0;
+	WeaponGetType_New = 1;
+	WeaponGetType_Update = 2;
+	WeaponGetType_Overlap = 3;
+}
+
+enum WeaponType {
+	WeaponType_None = 0;
+	WeaponType_Summon = 1;
+	WeaponType_Event = 2;
+}
+
+enum WeaponUpgradeType {
+	WeaponUpgradeType_None = 0;
+	WeaponUpgradeType_Rank = 1;
+	WeaponUpgradeType_Limit = 2;
+}

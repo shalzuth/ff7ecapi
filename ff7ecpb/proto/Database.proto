@@ -1,0 +1,32 @@
+syntax = "proto2";
+package Octo.Proto;
+enum State {
+  NONE = 0;
+  ADD = 1;
+  UPDATE = 2;
+  LATEST = 3;
+  DELETE = 4;
+}
+message Data {
+  optional int32 id = 1;
+  optional string filepath = 2;
+  optional string name = 3;
+  optional int32 size = 4;
+  optional uint32 crc = 5;
+  optional uint64 generation = 6;
+  optional int32 priority = 7;
+  repeated int32 tagid = 8;
+  repeated int32 dependencies = 9;
+  optional string md5 = 10;
+  optional string object_name = 11;
+  optional State state = 12;
+  optional int32 upload_version_id = 13;
+
+}
+message Database {
+  optional int32 revision = 1;
+  repeated Data asset_bundle_list = 2;
+  repeated string tag_name = 3;
+  repeated Data resource_list = 4;
+  optional string url_format = 5;
+}

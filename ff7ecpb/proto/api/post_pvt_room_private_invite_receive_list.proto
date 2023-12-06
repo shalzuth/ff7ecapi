@@ -1,0 +1,31 @@
+import "validate/validate.proto";
+import "enums/enums_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtRoomPrivateInviteReceiveListRequest {
+}
+
+message PostPvtRoomPrivateInviteReceiveListResponse {
+	repeated .api.InviteReceive invite_receive_list = 1;
+}
+
+message InviteReceive {
+	optional string invite_id = 1;
+	optional .api.SenderUserInfo sender_user_info = 2;
+	optional .enums.MatchingTargetType matching_target_type = 3 [default = MatchingTargetType_None, (rules).enum.not_in = 0];
+	optional int64 target_id = 4 [(rules).int64.gt = 0];
+	optional int64 received_datetime = 5;
+}
+
+message SenderUserInfo {
+	optional string display_user_id = 1;
+	optional string player_name = 2;
+	optional int64 top_honor_id = 3;
+	optional int64 bottom_honor_id = 4;
+	optional int64 background_honor_id = 5;
+	optional int64 icon_honor_id = 6;
+	optional int64 combat_power = 7;
+}

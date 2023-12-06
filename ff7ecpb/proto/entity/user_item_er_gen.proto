@@ -1,0 +1,19 @@
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserItem {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 item_id = 2 [(client).primary = true, (client).primary_key_order = 1, (client).relation_table_name = "m_item", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 count = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 obtain_count = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_obtain_count = 5 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 last_obtain_reset_datetime = 6 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 consumption_count = 7 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_consumption_count = 8 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 last_consumption_reset_datetime = 9 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 get_datetime = 10 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 last_get_datetime = 11 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

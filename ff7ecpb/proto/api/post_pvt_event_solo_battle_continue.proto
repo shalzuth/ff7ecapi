@@ -1,0 +1,13 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtEventSoloBattleContinueRequest {
+	optional int64 event_battle_id = 1 [(rules).int64.gt = 0];
+	optional int64 entry_count = 2 [(rules).int64.gt = 0];
+}
+
+message PostPvtEventSoloBattleContinueResponse {
+}

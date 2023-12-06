@@ -1,0 +1,19 @@
+import "validate/validate.proto";
+import "entity/common.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtWeaponMedalExchangeRequest {
+	message WeaponMedalMapEntry {
+		optional int64 key = 1;
+		optional int64 value = 2;
+	}
+
+	repeated .api.PostPvtWeaponMedalExchangeRequest.WeaponMedalMapEntry weapon_medal_map = 1 [(rules).map.values.int64.gt = 0];
+}
+
+message PostPvtWeaponMedalExchangeResponse {
+	repeated .entity.RewardInfo reward_info_list = 1;
+}

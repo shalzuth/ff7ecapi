@@ -1,0 +1,16 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostAuthSessionRequest {
+	optional string device_uuid = 1 [(rules).string.uuid = true];
+	optional string login_token = 2 [(rules).string.len = 32];
+	optional bool is_tracking_enabled = 3;
+	optional bool is_personalized_advertising_enabled = 4;
+}
+
+message PostAuthSessionResponse {
+	optional bool is_device_change = 1;
+}

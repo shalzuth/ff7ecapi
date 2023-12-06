@@ -1,0 +1,17 @@
+import "enums/enums_er_gen.proto";
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserMultiAreaBattle {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 multi_area_battle_id = 2 [(client).primary = true, (client).primary_key_order = 1, (client).relation_table_name = "m_multi_area_battle", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 total_entry_count = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 reset_win_count = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 last_win_reset_datetime = 5 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_win_count = 6 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 high_score = 7 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional .enums.BattleRankType high_rank_type = 8 [default = BattleRankType_None];
+}

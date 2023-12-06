@@ -1,0 +1,12 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtSteamAchievementRequest {
+	repeated int64 steam_achievement_ids = 1 [(rules).repeated.min_items = 1];
+}
+
+message PostPvtSteamAchievementResponse {
+}

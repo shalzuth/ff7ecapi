@@ -1,0 +1,35 @@
+import "entity/common.proto";
+import "entity/battle.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtAreaMultiBattleEndRequest {
+}
+
+message PostPvtAreaMultiBattleEndResponse {
+	message ContributionInfoMapEntry {
+		optional string key = 1;
+		optional .entity.MultiBattleContributionInfo value = 2;
+	}
+
+	optional .entity.BattleResult battle_result = 1;
+	optional .entity.BattleScoreResult score_result = 2;
+	optional int64 before_exp = 3;
+	optional int64 after_exp = 4;
+	repeated .api.PostPvtAreaMultiBattleEndResponse.ContributionInfoMapEntry contribution_info_map = 5;
+	repeated .entity.RewardInfo multi_reward_infos = 6;
+	optional .entity.BattleInput user_battle_input = 7;
+	optional .entity.BattleInput party_battle_input = 8;
+	repeated .entity.UserInfo user_infos = 9;
+	optional int64 friend_count = 10;
+	repeated .entity.MultiBattleFirstMeetingInfo multi_battle_first_meeting_infos = 11;
+	repeated .api.AreaMultiBattleBoostResult boost_result = 12;
+}
+
+message AreaMultiBattleBoostResult {
+	repeated .entity.RewardInfo reward_infos = 1;
+	repeated .entity.RewardInfo rare_enemy_reward_infos = 2;
+	repeated .entity.RewardInfo multi_reward_infos = 3;
+}

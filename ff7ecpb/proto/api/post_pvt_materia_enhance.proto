@@ -1,0 +1,31 @@
+import "validate/validate.proto";
+import "entity/user_materia_er_gen.proto";
+import "enums/enums_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtMateriaEnhanceRequest {
+	message IngredientItemMapEntry {
+		optional int64 key = 1;
+		optional int64 value = 2;
+	}
+
+	optional int64 user_materia_id = 1 [(rules).int64.gt = 0];
+	repeated int64 ingredient_materia_id_list = 2 [(rules).repeated.min_items = 0, (rules).repeated.unique = true];
+	repeated .api.PostPvtMateriaEnhanceRequest.IngredientItemMapEntry ingredient_item_map = 3 [(rules).map.values.int64.gt = 0];
+}
+
+message PostPvtMateriaEnhanceResponse {
+	message UnusedIngredientItemMapEntry {
+		optional int64 key = 1;
+		optional int64 value = 2;
+	}
+
+	optional int64 consumption_gil = 1;
+	optional .entity.UserMateria before_user_materia = 2;
+	optional .entity.UserMateria after_user_materia = 3;
+	optional .enums.EnhanceResultType result_type = 4 [default = EnhanceResultType_Normal];
+	repeated .api.PostPvtMateriaEnhanceResponse.UnusedIngredientItemMapEntry unused_ingredient_item_map = 5;
+}

@@ -1,0 +1,27 @@
+import "enums/enums_er_gen.proto";
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserMateria {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 user_materia_id = 2 [(client).primary = true, (client).primary_key_order = 1];
+	optional int64 materia_id = 3 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_materia", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional .enums.QualityType quality_type = 4 [default = QualityType_None];
+	optional int64 evolve_count = 5 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 notes_set_id = 6 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_skill_notes_set", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 exp = 7 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional bool is_lock = 8 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 get_datetime = 9 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 parameter_open_count = 10 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 parameter_id0 = 11 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_materia_parameter", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 parameter_id1 = 12 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_materia_parameter", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 parameter_id2 = 13 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_materia_parameter", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 parameter_id3 = 14 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_materia_parameter", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 parameter_value0 = 15 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 parameter_value1 = 16 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 parameter_value2 = 17 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 parameter_value3 = 18 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

@@ -1,0 +1,15 @@
+import "validate/validate.proto";
+import "entity/error.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtDebugErrorRequest {
+	optional int32 code = 1 [(rules).int32.gte = 0];
+	optional .entity.ErrorResponse error_response = 2;
+	optional int32 success_percent = 3 [(rules).int32.gte = 0];
+}
+
+message PostPvtDebugErrorResponse {
+}

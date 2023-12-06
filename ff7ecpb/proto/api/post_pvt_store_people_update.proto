@@ -1,0 +1,13 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtStorePeopleUpdateRequest {
+	optional int32 birth_year = 1 [(rules).int32.lte = 2100, (rules).int32.gte = 1900];
+	optional int32 birth_month = 2 [(rules).int32.lte = 12, (rules).int32.gte = 1];
+}
+
+message PostPvtStorePeopleUpdateResponse {
+}

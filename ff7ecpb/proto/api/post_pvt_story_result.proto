@@ -1,0 +1,20 @@
+import "entity/common.proto";
+import "validate/validate.proto";
+import "enums/enums_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtStoryResultRequest {
+	optional int64 episode_id = 1 [(rules).int64.gt = 0];
+	optional .enums.StoryModeType story_mode_type = 2 [default = StoryModeType_None, (rules).enum.not_in = 0];
+	optional bool is_story_skip = 3;
+	optional bool is_battle_skip = 4;
+	optional int64 party_id = 5 [(rules).int64.gte = 0];
+}
+
+message PostPvtStoryResultResponse {
+	repeated .entity.RewardInfo reward_infos = 1;
+	repeated .entity.RewardInfo story_party_first_reward_infos = 2;
+}

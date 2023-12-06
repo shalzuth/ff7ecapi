@@ -1,0 +1,14 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtTutorialRegisterUserNameRequest {
+	optional string user_name = 1 [(rules).string.min_len = 1, (rules).string.max_len = 10];
+	optional int64 step = 2 [(rules).int64.gt = 0];
+	optional string message = 3 [(rules).string.min_len = 1, (rules).string.max_len = 45];
+}
+
+message PostPvtTutorialRegisterUserNameResponse {
+}

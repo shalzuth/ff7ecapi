@@ -1,0 +1,13 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtEventScoreDungeonCurrentRankRequest {
+	optional int64 event_score_dungeon_id = 1 [(rules).int64.gt = 0];
+}
+
+message PostPvtEventScoreDungeonCurrentRankResponse {
+	optional int64 rank = 1;
+}

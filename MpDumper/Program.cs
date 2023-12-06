@@ -1,0 +1,1 @@
+﻿MpDumper.Dumper.Dump();

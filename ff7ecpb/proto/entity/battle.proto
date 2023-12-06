@@ -1,0 +1,110 @@
+import "entity/common.proto";
+import "entity/user_character_er_gen.proto";
+import "enums/enums_er_gen.proto";
+import "validate/validate.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message BattleWaveInfo {
+	optional int64 enemy_group_id = 1;
+	optional bool is_rare_enemy = 2;
+}
+
+message RareWaveInfo {
+	optional int64 battle_rare_wave_id = 1;
+	optional int64 insert_idx = 2;
+}
+
+message CharacterResult {
+	optional int64 character_id = 1;
+	optional int64 special_skill_count = 2;
+}
+
+message BattleResult {
+	repeated .entity.RewardInfo reward_infos = 1;
+	repeated .entity.RewardInfo first_reward_infos = 2;
+	repeated .entity.RewardInfo subscription_reward_infos = 3;
+	repeated .entity.RewardInfo rare_enemy_reward_infos = 4;
+	repeated .entity.UserCharacter before_user_characters = 5;
+	repeated .entity.UserCharacter after_user_characters = 6;
+	repeated .entity.CampaignInfo normal_campaign_infos = 7;
+	repeated .entity.RewardInfo ec_pass_reward_infos = 8;
+}
+
+message BattleInput {
+	optional int64 total_damage = 2 [(rules).int64.gte = 0];
+	optional int64 total_hp_heal = 3 [(rules).int64.gte = 0];
+	optional int64 total_status_condition_heal_count = 4 [(rules).int64.gte = 0];
+	optional int64 weak_element_hit_count = 5 [(rules).int64.gte = 0];
+	optional int64 notes_break_count = 6 [(rules).int64.gte = 0];
+	optional int64 max_blow_damage = 7 [(rules).int64.gte = 0];
+	optional int64 limit_break_count = 8 [(rules).int64.gte = 0];
+	optional int64 limit_combo_count = 9 [(rules).int64.gte = 0];
+	optional int64 total_atb_cost = 10 [(rules).int64.gte = 0];
+	optional int64 total_battle_msec = 11 [(rules).int64.gte = 0];
+	optional int64 total_taken_damage = 12 [(rules).int64.gte = 0];
+	optional int64 death_count = 13 [(rules).int64.gte = 0];
+	optional int64 tactics_switching_count = 14 [(rules).int64.gte = 0];
+	optional int64 tactics_level_max_count = 15 [(rules).int64.gte = 0];
+	optional int64 buff_success_count = 16 [(rules).int64.gte = 0];
+	optional int64 buff_offset_count = 17 [(rules).int64.gte = 0];
+	optional int64 debuff_success_count = 18 [(rules).int64.gte = 0];
+	optional int64 debuff_offset_count = 19 [(rules).int64.gte = 0];
+	optional int64 status_condition_success_count = 20 [(rules).int64.gte = 0];
+	repeated .enums.ScoreOptionSkillType skill_types = 21 [(rules).repeated.min_items = 0, (rules).repeated.unique = true];
+	repeated .entity.CharacterResult character_results = 22 [(rules).repeated.min_items = 0, (rules).repeated.max_items = 3];
+	optional int64 phase_break_count = 23 [(rules).int64.gte = 0];
+	optional int64 critical_hit_count = 24 [(rules).int64.gte = 0];
+}
+
+message BattleEnemyResult {
+	optional int64 wave_idx = 1 [(rules).int64.gte = 0];
+	optional int64 enemy_group_id = 2 [(rules).int64.gte = 0];
+	repeated int64 win_enemy_idxs = 3 [(rules).repeated.min_items = 0, (rules).repeated.unique = true];
+	repeated int64 escape_enemy_idxs = 4 [(rules).repeated.min_items = 0, (rules).repeated.unique = true];
+	repeated .entity.BattleReinforcementEnemyResult reinforcement_enemy_results = 5;
+}
+
+message BattleReinforcementEnemyResult {
+	optional int64 skill_reinforcement_effect_enemy_id = 1 [(rules).int64.gt = 0];
+	optional int64 enemy_id = 2 [(rules).int64.gt = 0];
+	optional int64 win_count = 3 [(rules).int64.gte = 0];
+}
+
+message BattleScoreResult {
+	optional int64 weak_element_hit_count_score = 1;
+	optional int64 notes_break_count_score = 2;
+	optional int64 max_blow_damage_score = 3;
+	optional int64 battle_time_score = 4;
+	optional int64 taken_damage_score = 5;
+	optional int64 death_count_score = 6;
+	optional int64 final_score = 7;
+	optional .enums.BattleRankType max_blow_damage_score_battle_rank_type = 8 [default = BattleRankType_None];
+	optional .enums.BattleRankType battle_time_score_battle_rank_type = 9 [default = BattleRankType_None];
+	optional .enums.BattleRankType taken_damage_score_battle_rank_type = 10 [default = BattleRankType_None];
+	optional .enums.BattleRankType death_count_score_battle_rank_type = 11 [default = BattleRankType_None];
+	optional .enums.BattleRankType final_score_battle_rank_type = 12 [default = BattleRankType_None];
+}
+
+message MultiBattleContributionInfo {
+	optional .enums.MultiBattleContributionType contribution_type = 1 [default = MultiBattleContributionType_None];
+	optional int64 contribution_value = 2;
+	optional .enums.MultiBattleContributionAwardType contribution_award_type = 3 [default = MultiBattleContributionAwardType_None];
+}
+
+message CommonBattleStartInput {
+	repeated .entity.PartyMemberInfo party_member_info_list = 1 [(rules).repeated.min_items = 0, (rules).repeated.max_items = 3];
+}
+
+message PartyMemberInfo {
+	optional int64 party_member_id = 1 [(rules).int64.gt = 0];
+	optional int64 combat_power = 2 [(rules).int64.gte = 0];
+}
+
+message MultiBattleFirstMeetingInfo {
+	optional string display_user_id = 1;
+	optional int64 number = 2;
+	optional .entity.RewardInfo reward_info = 3;
+}

@@ -1,0 +1,16 @@
+import "enums/enums_er_gen.proto";
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserDailyQuestSetting {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional .enums.DailyQuestType daily_quest_type = 2 [default = DailyQuestType_None];
+	optional int64 target_id0 = 3 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_item", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 target_id1 = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 target_id2 = 5 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 target_id3 = 6 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 target_id4 = 7 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

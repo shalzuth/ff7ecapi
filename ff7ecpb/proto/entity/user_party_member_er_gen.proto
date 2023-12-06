@@ -1,0 +1,31 @@
+import "enums/enums_er_gen.proto";
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserPartyMember {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 party_member_id = 2 [(client).primary = true, (client).primary_key_order = 1, (client).relation_table_name = "m_party_member", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 idx = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional .enums.PartyRoleType party_role_type = 4 [default = PartyRoleType_None];
+	optional int64 character_id = 5 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_character", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 weapon_id0 = 6 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_weapon", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 active_materia_id0 = 7 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "user_materia", (client).relation_column_name = "user_materia_id", (client).relation_column_type = "long"];
+	optional int64 active_materia_id1 = 8 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "user_materia", (client).relation_column_name = "user_materia_id", (client).relation_column_type = "long"];
+	optional int64 active_materia_id2 = 9 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "user_materia", (client).relation_column_name = "user_materia_id", (client).relation_column_type = "long"];
+	optional int64 weapon_id1 = 10 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_weapon", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 sub_weapon_id0 = 11 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_weapon", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 sub_weapon_id1 = 12 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_weapon", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 sub_weapon_id2 = 13 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_weapon", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 accessory_id0 = 14 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "user_accessory", (client).relation_column_name = "user_accessory_id", (client).relation_column_type = "long"];
+	optional int64 accessory_id1 = 15 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "user_accessory", (client).relation_column_name = "user_accessory_id", (client).relation_column_type = "long"];
+	optional int64 special_skill_id = 16 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_skill_special", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 costume_id = 17 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_character_costume", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 display_weapon_id = 18 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_weapon", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 display_costume_id = 19 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_character_costume", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 combat_power = 20 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional bool is_active = 21 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 updated_datetime = 22 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

@@ -1,0 +1,19 @@
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserMissionGroup {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 mission_group_id = 2 [(client).primary = true, (client).primary_key_order = 1, (client).relation_table_name = "m_mission_group", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 bonus_point = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 received_mission_bonus_idx_flags0 = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 received_mission_bonus_idx_flags1 = 5 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 received_mission_bonus_idx_flags2 = 6 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 received_mission_bonus_idx_flags3 = 7 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 received_extra_mission_bonus_idx_flags0 = 8 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 received_extra_mission_bonus_idx_flags1 = 9 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 last_reset_datetime = 10 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional bool is_received_special_mission = 12 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

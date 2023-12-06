@@ -1,0 +1,16 @@
+import "validate/validate.proto";
+import "enums/enums_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostMatchRoomPrivateSearchRequest {
+	optional int64 room_no = 1 [(rules).int64.gt = 0];
+}
+
+message PostMatchRoomPrivateSearchResponse {
+	optional .enums.MatchingTargetType matching_target_type = 1 [default = MatchingTargetType_None, (rules).enum.not_in = 0];
+	optional int64 target_id = 2 [(rules).int64.gt = 0];
+	optional .enums.MultiRoomResponseType response_type = 3 [default = MultiRoomResponseType_None];
+}

@@ -1,0 +1,17 @@
+import "validate/validate.proto";
+import "api/post_pvt_story_battle_start.proto";
+import "api/post_pvt_tutorial_progress_step.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtTutorialStoryBattleStartRequest {
+	optional .api.PostPvtStoryBattleStartRequest story_battle_start_request = 1 [(rules).message.required = true];
+	optional .api.PostPvtTutorialProgressStepRequest tutorial_progress_step_request = 2 [(rules).message.required = true];
+}
+
+message PostPvtTutorialStoryBattleStartResponse {
+	optional .api.PostPvtStoryBattleStartResponse story_battle_start_response = 1;
+	optional .api.PostPvtTutorialProgressStepResponse tutorial_progress_step_response = 2;
+}

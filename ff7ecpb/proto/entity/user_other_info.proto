@@ -1,0 +1,16 @@
+import "entity/user_stone.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserOtherInfo {
+	repeated .entity.UserStone user_stone_list = 1;
+	repeated .entity.MissionAchieved mission_achieved_list = 2;
+	optional bool has_gift = 3;
+}
+
+message MissionAchieved {
+	optional int64 mission_id = 1;
+	optional int64 progress_count = 2;
+}

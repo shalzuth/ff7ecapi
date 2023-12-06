@@ -1,0 +1,14 @@
+import "validate/validate.proto";
+import "api/post_pvt_dungeon_story_treasure.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtTutorialDungeonStoryTreasureRequest {
+	optional .api.PostPvtDungeonStoryTreasureRequest dungeon_story_treasure_request = 1 [(rules).message.required = true];
+}
+
+message PostPvtTutorialDungeonStoryTreasureResponse {
+	optional .api.PostPvtDungeonStoryTreasureResponse dungeon_story_treasure_response = 1;
+}

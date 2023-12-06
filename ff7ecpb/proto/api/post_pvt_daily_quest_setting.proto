@@ -1,0 +1,18 @@
+import "enums/enums_er_gen.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtDailyQuestSettingRequest {
+	optional .enums.DailyQuestType daily_quest_type = 1 [default = DailyQuestType_None, (rules).enum.not_in = 0];
+	optional int64 target_id0 = 2 [(rules).int64.gt = 0];
+	optional int64 target_id1 = 3 [(rules).int64.gt = 0];
+	optional int64 target_id2 = 4 [(rules).int64.gt = 0];
+	optional int64 target_id3 = 5 [(rules).int64.gt = 0];
+	optional int64 target_id4 = 6 [(rules).int64.gt = 0];
+}
+
+message PostPvtDailyQuestSettingResponse {
+}

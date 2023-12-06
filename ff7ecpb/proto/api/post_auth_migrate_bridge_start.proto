@@ -1,0 +1,11 @@
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostAuthMigrateBridgeStartRequest {
+}
+
+message PostAuthMigrateBridgeStartResponse {
+	optional string device_uuid = 1;
+	optional string backup_token = 2;
+}

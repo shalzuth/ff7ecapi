@@ -1,0 +1,14 @@
+import "entity/common.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtChocoboFarmDungeonTreasureRequest {
+	optional int64 dungeon_treasure_id = 1 [(rules).int64.gt = 0];
+}
+
+message PostPvtChocoboFarmDungeonTreasureResponse {
+	repeated .entity.RewardInfo reward_infos = 1;
+}

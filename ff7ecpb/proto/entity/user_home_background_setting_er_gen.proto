@@ -1,0 +1,14 @@
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserHomeBackgroundSetting {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional bool is_random = 2 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 home_background_id0 = 3 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_home_background", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 home_background_id1 = 4 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_home_background", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 home_background_id2 = 5 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_home_background", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 home_background_id3 = 6 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_home_background", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+}

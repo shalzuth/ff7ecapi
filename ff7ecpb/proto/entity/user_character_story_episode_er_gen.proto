@@ -1,0 +1,10 @@
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserCharacterStoryEpisode {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 character_story_episode_id = 2 [(client).primary = true, (client).primary_key_order = 1, (client).relation_table_name = "m_character_story_episode", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+}

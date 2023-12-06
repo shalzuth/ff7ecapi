@@ -1,0 +1,15 @@
+import "entity/battle.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtAreaMultiBattleStartRequest {
+}
+
+message PostPvtAreaMultiBattleStartResponse {
+	repeated .entity.BattleWaveInfo battle_wave_infos = 1 [(rules).repeated.min_items = 1];
+	optional .entity.RareWaveInfo rare_wave_info = 2;
+	optional int64 entry_count = 3;
+}

@@ -1,0 +1,13 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtCraftCancelRequest {
+	optional int64 index = 1 [(rules).int64.gte = 0];
+}
+
+message PostPvtCraftCancelResponse {
+	optional int64 index = 1;
+}

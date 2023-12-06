@@ -1,0 +1,20 @@
+import "entity/common.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtLoginBonusRequest {
+}
+
+message PostPvtLoginBonusResponse {
+	repeated .api.LoginBonusResult login_bonus_result_list = 1;
+}
+
+message LoginBonusResult {
+	optional int64 login_bonus_id = 1;
+	optional int64 login_bonus_sheet_id = 2;
+	optional int32 login_count = 3;
+	optional int32 sheet_count = 4;
+	repeated .entity.RewardInfo reward_info_list = 5;
+}

@@ -1,0 +1,16 @@
+import "validate/validate.proto";
+import "entity/common.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtMissionReceiveRequest {
+	repeated int64 mission_id_list = 2 [(rules).repeated.min_items = 1, (rules).repeated.unique = true];
+	optional bool is_single = 3;
+}
+
+message PostPvtMissionReceiveResponse {
+	repeated .entity.RewardInfo reward_info_list = 1;
+	repeated .entity.RewardInfo reward_bonus_info_list = 2;
+}

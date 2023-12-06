@@ -1,0 +1,16 @@
+import "validate/validate.proto";
+import "enums/enums_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtDungeonAnotherTriggerLockRequest {
+	optional int64 dungeon_id = 1 [(rules).int64.gt = 0];
+	optional int64 dungeon_trigger_lock_id = 2 [(rules).int64.gt = 0];
+	optional int64 entry_count = 3 [(rules).int64.gt = 0];
+	optional .enums.DungeonType dungeon_type = 4 [default = DungeonType_None];
+}
+
+message PostPvtDungeonAnotherTriggerLockResponse {
+}

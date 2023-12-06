@@ -1,0 +1,15 @@
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostAuthGameRegisterRequest {
+}
+
+message PostAuthGameRegisterResponse {
+	optional string device_uuid = 1;
+	optional int64 user_id = 2;
+	optional string display_user_id = 3;
+	optional string login_token = 4;
+	optional int64 battle_user_id = 5;
+	optional int64 next_registrable_time = 6;
+}

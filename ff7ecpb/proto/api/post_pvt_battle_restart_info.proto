@@ -1,0 +1,15 @@
+import "enums/enums_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtBattleRestartInfoRequest {
+}
+
+message PostPvtBattleRestartInfoResponse {
+	optional .enums.MultiBattleRestartType restart_type = 1 [default = MultiBattleRestartType_None];
+	optional string host = 2;
+	optional int64 port = 3;
+	optional string player_session_id = 4;
+}

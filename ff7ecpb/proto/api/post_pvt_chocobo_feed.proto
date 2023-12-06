@@ -1,0 +1,21 @@
+import "validate/validate.proto";
+import "entity/user_chocobo_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtChocoboFeedRequest {
+	message FeedItemMapEntry {
+		optional int64 key = 1;
+		optional int64 value = 2;
+	}
+
+	optional int64 user_chocobo_id = 1 [(rules).int64.gt = 0];
+	repeated .api.PostPvtChocoboFeedRequest.FeedItemMapEntry feed_item_map = 2 [(rules).map.min_pairs = 1, (rules).map.values.int64.gt = 0];
+}
+
+message PostPvtChocoboFeedResponse {
+	optional .entity.UserChocobo before_user_chocobo = 1;
+	optional .entity.UserChocobo after_user_chocobo = 2;
+}

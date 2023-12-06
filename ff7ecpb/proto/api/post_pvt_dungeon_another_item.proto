@@ -1,0 +1,15 @@
+import "validate/validate.proto";
+import "enums/enums_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtDungeonAnotherItemRequest {
+	optional int64 instant_item_id = 1 [(rules).int64.gt = 0];
+	optional int64 character_id = 2 [(rules).int64.gte = 0];
+	optional .enums.DungeonType dungeon_type = 3 [default = DungeonType_None];
+}
+
+message PostPvtDungeonAnotherItemResponse {
+}

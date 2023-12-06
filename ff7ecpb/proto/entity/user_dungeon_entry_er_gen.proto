@@ -1,0 +1,18 @@
+import "enums/enums_er_gen.proto";
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserDungeonEntry {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional .enums.DungeonType dungeon_type = 2 [default = DungeonType_None];
+	optional int64 party_id = 3 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "user_party", (client).relation_column_name = "party_id", (client).relation_column_type = "long"];
+	optional int64 entry_count = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 dungeon_id = 5 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_dungeon", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 content_id = 6 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_story_episode", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional .enums.DungeonProgressType dungeon_progress_type = 7 [default = DungeonProgressType_None];
+	optional .enums.DungeonResultType dungeon_result_type = 8 [default = DungeonResultType_None];
+	optional string instant_item_info = 9 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

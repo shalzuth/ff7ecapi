@@ -1,0 +1,17 @@
+import "enums/enums_er_gen.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtRoomSoloCreateRequest {
+	optional .enums.BattleType battle_type = 1 [default = BattleType_None, (rules).enum.in = 7];
+	optional int64 target_id = 2 [(rules).int64.gt = 0];
+}
+
+message PostPvtRoomSoloCreateResponse {
+	optional string host = 1;
+	optional int64 port = 2;
+	optional string player_session_id = 3;
+}

@@ -1,0 +1,20 @@
+import "validate/validate.proto";
+import "entity/chocobo.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtChocoboSellRequest {
+	repeated int64 user_chocobo_id_list = 1 [(rules).repeated.min_items = 1, (rules).repeated.unique = true];
+}
+
+message PostPvtChocoboSellResponse {
+	message ChocoboExpeditionResultMapEntry {
+		optional int64 key = 1;
+		optional .entity.ChocoboExpeditionResult value = 2;
+	}
+
+	optional int64 sales_medal = 1;
+	repeated .api.PostPvtChocoboSellResponse.ChocoboExpeditionResultMapEntry chocobo_expedition_result_map = 2;
+}

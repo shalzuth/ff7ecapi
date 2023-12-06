@@ -1,0 +1,24 @@
+import "entity/battle.proto";
+import "entity/common.proto";
+import "enums/enums_er_gen.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtStoryBattleEndRequest {
+	optional int64 story_battle_id = 1 [(rules).int64.gt = 0];
+	optional .enums.StoryModeType story_mode_type = 2 [default = StoryModeType_None, (rules).enum.not_in = 0];
+	optional int64 party_id = 3 [(rules).int64.gt = 0];
+	optional int64 episode_id = 4 [(rules).int64.gt = 0];
+	optional int64 entry_count = 5 [(rules).int64.gt = 0];
+	optional .enums.BattleResultType battle_result_type = 6 [default = BattleResultType_None, (rules).enum.not_in = 0];
+	optional .entity.BattleInput battle_input = 7 [(rules).message.required = true];
+	repeated .entity.BattleEnemyResult battle_enemy_results = 8 [(rules).repeated.min_items = 1];
+}
+
+message PostPvtStoryBattleEndResponse {
+	optional .entity.BattleResult battle_result = 1;
+	repeated .entity.RewardInfo rental_costume_rewards = 2;
+}

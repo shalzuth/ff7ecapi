@@ -1,0 +1,13 @@
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserRecoveryStone {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 recovery_stone_id = 2 [(client).primary = true, (client).primary_key_order = 1];
+	optional int64 recovery_count = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_recovery_count = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 last_reset_datetime = 5 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

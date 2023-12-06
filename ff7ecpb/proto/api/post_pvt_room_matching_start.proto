@@ -1,0 +1,16 @@
+import "enums/enums_er_gen.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtRoomMatchingStartRequest {
+	optional .enums.MatchingTargetType matching_target_type = 1 [default = MatchingTargetType_None, (rules).enum.not_in = 0];
+	optional int64 target_id = 2 [(rules).int64.gt = 0];
+	optional .enums.StaminaBoostType stamina_boost_type = 3 [default = StaminaBoostType_None];
+}
+
+message PostPvtRoomMatchingStartResponse {
+	optional string ticket_id = 1;
+}

@@ -1,0 +1,17 @@
+import "entity/craft.proto";
+import "enums/enums_er_gen.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtCraftEndRequest {
+	optional .enums.CraftType craft_type = 1 [default = CraftType_None];
+	repeated int64 user_craft_idx_list = 2 [(rules).repeated.min_items = 1, (rules).repeated.unique = true];
+}
+
+message PostPvtCraftEndResponse {
+	optional .enums.CraftType craft_type = 1 [default = CraftType_None];
+	repeated .entity.CraftResult craft_result_list = 2;
+}

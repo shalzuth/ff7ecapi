@@ -1,0 +1,12 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtCharacterGrowthBoardOpenRequest {
+	repeated int64 node_ids = 1 [(rules).repeated.min_items = 1];
+}
+
+message PostPvtCharacterGrowthBoardOpenResponse {
+}

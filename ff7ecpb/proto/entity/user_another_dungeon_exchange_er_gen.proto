@@ -1,0 +1,11 @@
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserAnotherDungeonExchange {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 exchange_count = 2 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 exchanged_at = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

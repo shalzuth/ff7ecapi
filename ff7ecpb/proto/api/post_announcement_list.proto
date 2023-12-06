@@ -1,0 +1,18 @@
+import "entity/announcement.proto";
+import "enums/enums_er_gen.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostAnnouncementListRequest {
+	repeated .enums.AnnouncementType announcement_type_list = 1 [(rules).repeated.min_items = 1, (rules).repeated.unique = true];
+	optional int32 offset = 2 [(rules).int32.gte = 0];
+	optional int32 limit = 3 [(rules).int32.lte = 100, (rules).int32.gt = 0];
+}
+
+message PostAnnouncementListResponse {
+	repeated .entity.AnnouncementSummary announcement_summary_list = 1;
+	optional int64 total = 2;
+}

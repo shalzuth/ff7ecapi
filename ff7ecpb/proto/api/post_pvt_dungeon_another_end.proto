@@ -1,0 +1,48 @@
+import "entity/common.proto";
+import "enums/enums_er_gen.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtDungeonAnotherEndRequest {
+	optional int64 dungeon_id = 1 [(rules).int64.gt = 0];
+	optional int64 entry_count = 2 [(rules).int64.gt = 0];
+	optional int64 total_score_buff_debuff_coefficient = 3;
+	optional .enums.DungeonType dungeon_type = 4 [default = DungeonType_None];
+}
+
+message PostPvtDungeonAnotherEndResponse {
+	repeated .entity.RewardInfo lap_reward_infos = 1;
+	optional int64 total_battle_win_score = 2;
+	optional int64 total_special_skill_finish_score = 3;
+	optional int64 weak_element_hit_count_score = 4;
+	optional int64 notes_break_count_score = 5;
+	optional int64 max_blow_damage_score = 6;
+	optional int64 total_atb_cost_score = 7;
+	optional int64 total_battle_time_score = 8;
+	optional int64 total_taken_damage_score = 9;
+	optional int64 death_count_score = 10;
+	optional int64 remained_instant_item_score = 11;
+	optional int64 dungeon_clear_score = 12;
+	optional int64 with_specific_character_score = 13;
+	optional int64 with_specific_party_score = 14;
+	optional int64 unused_ban_skill_score = 15;
+	optional int64 without_instant_item_score = 16;
+	optional int64 boss_score_coefficient = 17;
+	optional int64 score_buff_debuff_coefficient = 18;
+	optional int64 final_score = 19;
+	repeated .api.AnotherRankRewardInfo first_reward_infos = 20;
+	optional .enums.DungeonRankType final_score_dungeon_rank_type = 21 [default = DungeonRankType_None];
+	repeated .entity.RewardInfo first_clear_reward_infos = 22;
+	optional int64 boss_score = 23;
+	optional int64 buff_debuff_score = 24;
+	optional int64 ex_boss_clear_score = 25;
+	repeated .entity.RewardInfo mission_clear_reward_infos = 26;
+}
+
+message AnotherRankRewardInfo {
+	optional .enums.DungeonRankType dungeon_rank_type = 1 [default = DungeonRankType_None];
+	repeated .entity.RewardInfo reward_info = 2;
+}

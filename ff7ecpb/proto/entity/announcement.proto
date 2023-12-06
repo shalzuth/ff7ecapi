@@ -1,0 +1,19 @@
+import "enums/enums_er_gen.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message AnnouncementSummary {
+	optional int64 announcement_id = 1;
+	optional .enums.AnnouncementType announcement_type = 2 [default = AnnouncementType_None];
+	optional string title = 3;
+	optional int64 resource_id = 4;
+	optional int64 start_datetime = 5;
+	optional int64 postscript_datetime = 6;
+}
+
+message AnnouncementDetail {
+	optional .entity.AnnouncementSummary summary = 1;
+	optional string data = 2;
+}

@@ -1,0 +1,18 @@
+import "validate/validate.proto";
+import "entity/common.proto";
+import "enums/enums_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtUserSearchRequest {
+	optional string display_user_id = 1 [(rules).string.len = 13];
+}
+
+message PostPvtUserSearchResponse {
+	optional .entity.UserListInfo user_list_info = 1;
+	optional int64 friend_count = 2;
+	optional .enums.FriendType friend_type = 3 [default = FriendType_NotFriend];
+	optional .enums.FriendResponseType friend_response_type = 4 [default = FriendResponseType_None, (rules).enum.not_in = 0];
+}

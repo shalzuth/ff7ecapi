@@ -1,0 +1,18 @@
+import "validate/validate.proto";
+import "entity/battle.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtDailyQuestStartRequest {
+	optional int64 daily_quest_id = 1 [(rules).int64.gt = 0];
+	optional int64 party_id = 2 [(rules).int64.gt = 0];
+	optional .entity.CommonBattleStartInput battle_start_input = 3;
+}
+
+message PostPvtDailyQuestStartResponse {
+	repeated .entity.BattleWaveInfo battle_wave_infos = 1 [(rules).repeated.min_items = 1];
+	optional .entity.RareWaveInfo rare_wave_info = 2;
+	optional int64 entry_count = 3;
+}

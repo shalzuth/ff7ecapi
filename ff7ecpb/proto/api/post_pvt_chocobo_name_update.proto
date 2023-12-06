@@ -1,0 +1,13 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtChocoboNameUpdateRequest {
+	optional int64 user_chocobo_id = 1 [(rules).int64.gt = 0];
+	optional string chocobo_name = 2 [(rules).string.min_len = 1, (rules).string.max_len = 10];
+}
+
+message PostPvtChocoboNameUpdateResponse {
+}

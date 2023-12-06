@@ -1,0 +1,15 @@
+import "entity/common.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtDungeonStoryTriggerLockRequest {
+	optional int64 episode_id = 1 [(rules).int64.gt = 0];
+	optional int64 dungeon_trigger_lock_id = 2 [(rules).int64.gt = 0];
+	optional int64 entry_count = 3 [(rules).int64.gt = 0];
+}
+
+message PostPvtDungeonStoryTriggerLockResponse {
+}

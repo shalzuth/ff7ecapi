@@ -1,0 +1,12 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostSerialRegisterRequest {
+	optional string serial_code = 1 [(rules).string.min_len = 1, (rules).string.max_len = 32];
+}
+
+message PostSerialRegisterResponse {
+}

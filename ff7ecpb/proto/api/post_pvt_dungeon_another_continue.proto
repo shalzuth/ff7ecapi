@@ -1,0 +1,11 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtDungeonAnotherContinueRequest {
+}
+
+message PostPvtDungeonAnotherContinueResponse {
+}

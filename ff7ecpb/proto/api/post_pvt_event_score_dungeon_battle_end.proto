@@ -1,0 +1,15 @@
+import "validate/validate.proto";
+import "api/post_pvt_another_battle_end.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtEventScoreDungeonBattleEndRequest {
+	optional .api.PostPvtAnotherBattleEndRequest another_battle_end_request = 1 [(rules).message.required = true];
+	optional int64 event_score_dungeon_id = 2 [(rules).int64.gt = 0];
+}
+
+message PostPvtEventScoreDungeonBattleEndResponse {
+	optional .api.PostPvtAnotherBattleEndResponse another_battle_end_response = 1;
+}

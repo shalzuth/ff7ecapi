@@ -1,0 +1,18 @@
+import "entity/user_party_member_er_gen.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtPartyMultiSetUpsertRequest {
+	repeated .api.MultiPartyMember multi_party_member_list = 1 [(rules).repeated.min_items = 1];
+}
+
+message MultiPartyMember {
+	optional .entity.UserPartyMember user_party_member = 1;
+	optional string name = 2;
+}
+
+message PostPvtPartyMultiSetUpsertResponse {
+}

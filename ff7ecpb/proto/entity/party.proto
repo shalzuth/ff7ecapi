@@ -1,0 +1,12 @@
+import "entity/user_party_member_er_gen.proto";
+import "validate/validate.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message PartyInfo {
+	optional int64 party_id = 1 [(rules).int64.gt = 0];
+	optional int64 combat_power = 2 [(rules).int64.gte = 0];
+	repeated .entity.UserPartyMember user_party_member_list = 3 [(rules).repeated.min_items = 3, (rules).repeated.max_items = 3];
+}

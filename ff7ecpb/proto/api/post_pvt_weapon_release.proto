@@ -1,0 +1,16 @@
+import "validate/validate.proto";
+import "entity/user_weapon_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtWeaponReleaseRequest {
+	optional int64 weapon_id = 1 [(rules).int64.gt = 0];
+}
+
+message PostPvtWeaponReleaseResponse {
+	optional int64 consumption_gil = 1;
+	optional .entity.UserWeapon before_user_weapon = 2;
+	optional .entity.UserWeapon after_user_weapon = 3;
+}

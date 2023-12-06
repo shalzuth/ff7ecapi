@@ -1,0 +1,14 @@
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserCharacter {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 character_id = 2 [(client).primary = true, (client).primary_key_order = 1, (client).relation_table_name = "m_character", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 exp = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 over_exp = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 mission_group_id = 5 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_mission_group", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 last_change_mission_datetime = 6 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

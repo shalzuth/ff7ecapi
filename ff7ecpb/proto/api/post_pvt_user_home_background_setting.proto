@@ -1,0 +1,16 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtUserHomeBackgroundSettingRequest {
+	optional bool is_random = 1;
+	optional int64 home_background_id0 = 2 [(rules).int64.gte = 0];
+	optional int64 home_background_id1 = 3 [(rules).int64.gte = 0];
+	optional int64 home_background_id2 = 4 [(rules).int64.gte = 0];
+	optional int64 home_background_id3 = 5 [(rules).int64.gte = 0];
+}
+
+message PostPvtUserHomeBackgroundSettingResponse {
+}

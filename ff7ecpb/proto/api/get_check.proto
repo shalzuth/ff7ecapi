@@ -1,0 +1,20 @@
+import "entity/common.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message GetCheckRequest {
+}
+
+message GetCheckResponse {
+	optional bool is_maintenance = 1;
+	optional .entity.MaintenanceInfo maintenance_info = 2;
+	optional bool is_force_update = 3;
+	optional bool is_review = 4;
+	optional string api_url = 5;
+	optional int64 terms_update_times = 6;
+	optional int32 octo_version = 7;
+	optional string octo_url = 8;
+	optional string webview_url = 9;
+}

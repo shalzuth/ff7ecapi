@@ -1,0 +1,23 @@
+import "enums/enums_er_gen.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtStorePurchaseStartRequest {
+	optional int64 shop_id = 1 [(rules).int64.gt = 0];
+	optional int64 shop_item_id = 2 [(rules).int64.gt = 0];
+	optional int64 current_purchase_count = 3 [(rules).int64.gte = 0];
+	optional string price = 4;
+	optional string priceLocale = 5;
+}
+
+message PostPvtStorePurchaseStartResponse {
+	optional int64 bridge_transaction_id = 1;
+	optional bool is_birth = 2;
+	optional bool is_charge_alert = 3;
+	optional .enums.AgeCategoryType age_category_type = 4 [default = AgeCategoryType_None];
+	optional int64 limit_charge_this_month = 5;
+	optional string birth_year_month = 6;
+}

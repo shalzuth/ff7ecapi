@@ -1,0 +1,41 @@
+import "entity/common.proto";
+import "entity/battle.proto";
+import "enums/enums_er_gen.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtAnotherBattleEndRequest {
+	message ElementTypeTotalDamageMapEntry {
+		optional int32 key = 1;
+		optional int64 value = 2;
+	}
+
+	optional int64 another_battle_id = 1 [(rules).int64.gt = 0];
+	optional int64 boss_enhance_stage = 2 [(rules).int64.gte = 0];
+	optional int64 entry_count = 3 [(rules).int64.gt = 0];
+	optional .enums.BattleResultType battle_result_type = 4 [default = BattleResultType_None, (rules).enum.not_in = 0];
+	optional .entity.BattleInput battle_input = 5 [(rules).message.required = true];
+	repeated .entity.BattleEnemyResult battle_enemy_results = 6 [(rules).repeated.min_items = 1];
+	repeated .api.PostPvtAnotherBattleEndRequest.ElementTypeTotalDamageMapEntry element_type_total_damage_map = 7;
+	optional int64 total_weak_element_damage = 8;
+	optional .enums.DungeonType dungeon_type = 10 [default = DungeonType_None];
+}
+
+message PostPvtAnotherBattleEndResponse {
+	optional .entity.BattleResult battle_result = 1;
+	optional int64 win_score = 2;
+	optional int64 total_win_score = 3;
+	optional int64 special_skill_finish_score = 4;
+	optional int64 total_special_skill_finish_score = 5;
+	optional int64 weak_element_hit_count_score = 6;
+	optional int64 total_weak_element_hit_count_score = 7;
+	optional int64 notes_break_count_score = 8;
+	optional int64 total_notes_break_count_score = 9;
+	optional bool is_updated_max_blow_damage = 10;
+	optional int64 max_blow_damage = 11;
+	optional .entity.BattleScoreResult score_result = 12;
+	repeated .entity.RewardInfo after_battle_drop_reward_infos = 13;
+}

@@ -1,0 +1,17 @@
+import "entity/chocobo.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtChocoboExpeditionEditRequest {
+	optional int64 expedition_deck_id = 1 [(rules).int64.gt = 0];
+	optional int64 user_chocobo_id = 2 [(rules).int64.gte = 0];
+	optional int64 expedition_id = 3 [(rules).int64.gte = 0];
+	optional int64 character_id = 4 [(rules).int64.gte = 0];
+}
+
+message PostPvtChocoboExpeditionEditResponse {
+	optional .entity.ChocoboExpeditionResult chocobo_expedition_result = 1;
+}

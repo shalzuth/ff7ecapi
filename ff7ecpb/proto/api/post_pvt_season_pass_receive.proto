@@ -1,0 +1,21 @@
+import "validate/validate.proto";
+import "entity/common.proto";
+import "enums/enums_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtSeasonPassReceiveRequest {
+	optional int64 season_pass_id = 1 [(rules).int64.gt = 0];
+	repeated .api.SeasonPassRewardInfo season_pass_reward_info_list = 2 [(rules).repeated.min_items = 1];
+}
+
+message SeasonPassRewardInfo {
+	optional int64 season_pass_step_id = 1 [(rules).int64.gt = 0];
+	optional int64 season_pass_select_reward_id = 2 [(rules).int64.gte = 0];
+}
+
+message PostPvtSeasonPassReceiveResponse {
+	repeated .entity.RewardInfo reward_info_list = 1;
+}

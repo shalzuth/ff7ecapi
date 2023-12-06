@@ -1,0 +1,14 @@
+import "enums/enums_er_gen.proto";
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserPlayRecord {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional .enums.PlayRecordType play_record_type = 2 [default = PlayRecordType_None];
+	optional string str_value = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 int_value = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 date_value = 5 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

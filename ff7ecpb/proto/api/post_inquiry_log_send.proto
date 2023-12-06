@@ -1,0 +1,14 @@
+import "validate/validate.proto";
+import "option/option.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostInquiryLogSendRequest {
+	optional bytes log = 1 [(json).omit = true, (rules).bytes.max_len = 1000000];
+}
+
+message PostInquiryLogSendResponse {
+	optional string uuid = 1;
+}

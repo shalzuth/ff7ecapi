@@ -1,0 +1,12 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtFriendDissolveRequest {
+	optional string display_user_id = 1 [(rules).string.len = 13];
+}
+
+message PostPvtFriendDissolveResponse {
+}

@@ -1,0 +1,173 @@
+import "entity/user_er_gen.proto";
+import "enums/enums_er_gen.proto";
+import "entity/user_play_record_er_gen.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message CommonRequest {
+	optional string onetime_token = 1;
+}
+
+message CommonResponse {
+	optional .entity.User user = 1;
+}
+
+message RewardInfo {
+	optional .enums.RewardType reward_type = 1 [default = RewardType_None];
+	optional int64 target_id = 2;
+	optional int64 count = 3;
+	optional bool is_gift = 4;
+	optional .entity.RewardOption reward_option = 5;
+	optional .entity.GiftInfo gift_info = 6;
+}
+
+message GiftInfo {
+	optional int64 user_gift_id = 1;
+	optional int64 message_template_language_id = 2;
+	optional int64 message_detail_value0 = 3;
+	optional int64 message_detail_value1 = 4;
+	optional int64 message_detail_value2 = 5;
+	optional .enums.RewardObtainType reward_obtain_type = 6 [default = RewardObtainType_None];
+	optional bool isLimit = 7;
+	optional int64 received_datetime = 8;
+	optional int64 expire_datetime = 9;
+}
+
+message RewardOption {
+	optional .entity.WeaponOption weapon_option = 1;
+	optional .entity.AccessoryOption accessory_option = 2;
+	optional .entity.MateriaOption materia_option = 3;
+	optional .entity.ChocoboOption chocobo_option = 4;
+	optional .entity.CommonOption common_option = 5;
+	optional .entity.ItemOption item_option = 6;
+}
+
+message WeaponOption {
+	optional .enums.RarityType rarity_type = 1 [default = RarityType_None];
+	optional .enums.WeaponGetType weapon_get_type = 2 [default = WeaponGetType_None];
+	optional int64 medal_count = 3;
+	optional .enums.RarityType last_rarity_type = 4 [default = RarityType_None];
+}
+
+message AccessoryOption {
+	optional int64 user_accessory_id = 1;
+	optional .enums.QualityType quality_type = 2 [default = QualityType_None];
+	optional int64 passive_skill_point = 3;
+}
+
+message MateriaOption {
+	optional int64 user_materia_id = 1;
+	optional .enums.QualityType quality_type = 2 [default = QualityType_None];
+	optional int64 notes_set_id = 3;
+	optional int64 parameter_open_count = 5;
+	optional int64 parameter_id0 = 6;
+	optional int64 parameter_id1 = 7;
+	optional int64 parameter_id2 = 8;
+	optional int64 parameter_id3 = 9;
+	optional int64 parameter_value0 = 10;
+	optional int64 parameter_value1 = 11;
+	optional int64 parameter_value2 = 12;
+	optional int64 parameter_value3 = 13;
+}
+
+message ChocoboOption {
+	optional int64 chocobo_rank_group_id = 1;
+	optional int64 chocobo_expedition_parameter_group_id = 2;
+	optional .enums.ChocoboRankType rank_type = 3 [default = ChocoboRankType_None];
+	optional .enums.ChocoboRankType LimitRankType = 4 [default = ChocoboRankType_None];
+	optional int64 area_type_flags = 5;
+	optional .enums.ChocoboType chocobo_type = 6 [default = ChocoboType_None];
+	optional .enums.ChocoboSexType sex_type = 7 [default = ChocoboSexType_None];
+	optional int64 SpeedWeight = 8;
+	optional int64 StaminaWeight = 9;
+	optional int64 IntelligenceWeight = 10;
+	optional int64 AdaptabilityWeight = 11;
+}
+
+message CommonOption {
+	optional .enums.JudgeRewardType judge_reward_type = 1 [default = JudgeRewardType_None];
+}
+
+message ItemOption {
+	optional bool enable_obtain_limit = 1;
+}
+
+message MaintenanceInfo {
+	optional string official_twitter_url = 1;
+	optional int64 start_datetime = 2;
+	optional int64 end_datetime = 3;
+	optional int64 title_language_id = 4;
+	optional int64 description_language_id = 5;
+	optional string center_url = 6;
+}
+
+message UserProfileInfo {
+	optional .entity.UserListInfo user_list_info = 1;
+	optional int64 user_exp = 2;
+	optional string profile_message = 3;
+	optional int64 favorite_character_id = 4;
+	repeated .entity.UserPlayRecord user_play_records = 5;
+	optional .enums.FriendType friend_type = 6 [default = FriendType_NotFriend];
+	optional int64 friend_count = 7;
+}
+
+message UserListInfo {
+	optional string display_user_id = 1;
+	optional string player_name = 2;
+	optional int64 user_rank = 3;
+	optional int64 top_honor_id = 4;
+	optional int64 bottom_honor_id = 5;
+	optional int64 background_honor_id = 6;
+	optional int64 icon_honor_id = 7;
+	optional int64 last_access_datetime = 8;
+	optional int64 combat_power = 9;
+}
+
+message UserInfo {
+	optional string display_user_id = 1;
+	optional string player_name = 2;
+	optional int64 user_rank = 3;
+	optional int64 top_honor_id = 4;
+	optional int64 bottom_honor_id = 5;
+	optional int64 background_honor_id = 6;
+	optional int64 icon_honor_id = 7;
+	optional int64 combat_power = 8;
+	optional .enums.FriendType friend_type = 9 [default = FriendType_NotFriend];
+	optional int64 friend_count = 10;
+	optional bool is_available_ec_pass = 11;
+}
+
+message RankingUserInfo {
+	optional string display_user_id = 1;
+	optional string player_name = 2;
+	optional int64 top_honor_id = 3;
+	optional int64 bottom_honor_id = 4;
+	optional int64 background_honor_id = 5;
+	optional int64 icon_honor_id = 6;
+	optional int64 rank = 7;
+	optional int64 score = 8;
+}
+
+message ClashClearUserInfo {
+	optional string display_user_id = 1;
+	optional string player_name = 2;
+	optional int64 top_honor_id = 3;
+	optional int64 bottom_honor_id = 4;
+	optional int64 background_honor_id = 5;
+	optional int64 icon_honor_id = 6;
+	optional int64 clear_datetime = 7;
+}
+
+message ClashClearUserSimpleInfo {
+	optional string player_name = 1;
+	optional int64 clear_datetime = 2;
+	optional bool is_self = 3;
+}
+
+message CampaignInfo {
+	optional .enums.CampaignEffectType campaign_effect_type = 1 [default = CampaignEffectType_None];
+	optional bool is_only_character = 2;
+	optional int64 campaign_id = 3;
+}

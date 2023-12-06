@@ -1,0 +1,17 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtGachaWishChoiceRequest {
+	repeated .api.GachaWishChoiceInfo gacha_wish_choice_info_list = 1 [(rules).repeated.min_items = 1];
+}
+
+message PostPvtGachaWishChoiceResponse {
+}
+
+message GachaWishChoiceInfo {
+	optional int64 gacha_wish_choice_id = 1 [(rules).int64.gt = 0];
+	optional int64 weapon_id = 2 [(rules).int64.gt = 0];
+}

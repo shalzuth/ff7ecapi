@@ -1,0 +1,18 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtMissionSupplyRequest {
+	message ItemIdMapEntry {
+		optional int64 key = 1;
+		optional int64 value = 2;
+	}
+
+	optional int64 mission_id = 1 [(rules).int64.gt = 0];
+	repeated .api.PostPvtMissionSupplyRequest.ItemIdMapEntry item_id_map = 2 [(rules).map.values.int64.gt = 0];
+}
+
+message PostPvtMissionSupplyResponse {
+}

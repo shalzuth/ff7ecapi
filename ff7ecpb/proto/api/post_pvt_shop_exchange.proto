@@ -1,0 +1,27 @@
+import "entity/common.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtShopExchangeRequest {
+	message ConsumptionItemIdMapEntry {
+		optional int64 key = 1;
+		optional int64 value = 2;
+	}
+
+	optional int64 shop_id = 1 [(rules).int64.gt = 0];
+	optional int64 shop_item_id = 2 [(rules).int64.gt = 0];
+	optional int64 current_purchase_count = 3 [(rules).int64.gte = 0];
+	optional int64 purchase_count = 4 [(rules).int64.gt = 0];
+	repeated .api.PostPvtShopExchangeRequest.ConsumptionItemIdMapEntry consumption_item_id_map = 5 [(rules).map.values.int64.gt = 0];
+	optional int64 idx = 6 [(rules).int64.gte = 0];
+	optional bool is_pickup = 7;
+}
+
+message PostPvtShopExchangeResponse {
+	repeated .entity.RewardInfo reward_infos = 1;
+	repeated .entity.RewardInfo bonus_reward_infos = 2;
+	optional bool is_limit = 3;
+}

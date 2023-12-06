@@ -1,0 +1,41 @@
+import "enums/enums_er_gen.proto";
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserChocobo {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 user_chocobo_id = 2 [(client).primary = true, (client).primary_key_order = 1];
+	optional int64 chocobo_id = 3 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_chocobo", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 chocobo_rank_group_id = 4 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_chocobo_rank_group", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 chocobo_expedition_parameter_group_id = 5 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_chocobo_expedition_parameter_group", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional .enums.ChocoboRankType rank_type = 6 [default = ChocoboRankType_None];
+	optional .enums.ChocoboRankType limit_rank_type = 7 [default = ChocoboRankType_None];
+	optional int64 area_type_flags = 8 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional .enums.ChocoboType chocobo_type = 9 [default = ChocoboType_None];
+	optional .enums.ChocoboSexType sex_type = 10 [default = ChocoboSexType_None];
+	optional string name = 11 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 speed_weight = 12 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 stamina_weight = 13 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 intelligence_weight = 14 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 adaptability_weight = 15 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 speed = 16 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 stamina = 17 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 intelligence = 18 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 adaptability = 19 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 rank_up_total_speed = 20 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 rank_up_total_stamina = 21 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 rank_up_total_intelligence = 22 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 rank_up_total_adaptability = 23 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 additional_speed = 24 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 additional_stamina = 25 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 additional_intelligence = 26 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 additional_adaptability = 27 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 food_count = 28 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_feed_count = 29 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 last_food_count_reset_datetime = 30 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional bool is_lock = 31 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 get_datetime = 32 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

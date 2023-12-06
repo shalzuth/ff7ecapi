@@ -1,0 +1,15 @@
+import "entity/common.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtUserTitleRequest {
+	optional string sn = 1;
+}
+
+message PostPvtUserTitleResponse {
+	optional bool has_login_bonus = 1;
+	optional bool is_daily_first_login = 2;
+	repeated .entity.RewardInfo ec_pass_reward_infos = 3;
+}

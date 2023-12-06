@@ -1,0 +1,15 @@
+import "validate/validate.proto";
+import "api/post_pvt_dungeon_another_item.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtEventScoreDungeonAnotherItemRequest {
+	optional .api.PostPvtDungeonAnotherItemRequest another_item_request = 1 [(rules).message.required = true];
+	optional int64 event_score_dungeon_id = 2 [(rules).int64.gt = 0];
+}
+
+message PostPvtEventScoreDungeonAnotherItemResponse {
+	optional .api.PostPvtDungeonAnotherItemResponse another_item_response = 1;
+}

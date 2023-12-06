@@ -1,0 +1,12 @@
+import "entity/common.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtAdvertisementRequest {
+}
+
+message PostPvtAdvertisementResponse {
+	repeated .entity.RewardInfo reward_info_list = 1;
+}

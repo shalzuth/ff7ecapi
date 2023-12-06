@@ -1,0 +1,12 @@
+import "enums/enums_er_gen.proto";
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserTutorialStep {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional .enums.TutorialStepType tutorial_step_type = 2 [default = TutorialStepType_None];
+	optional int64 current_step = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

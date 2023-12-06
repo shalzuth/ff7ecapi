@@ -1,0 +1,17 @@
+import "entity/common.proto";
+import "entity/user_character_er_gen.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message ChocoboExpeditionResult {
+	repeated .entity.RewardInfo reward_infos = 1;
+	optional .entity.UserCharacter before_user_character = 2;
+	optional .entity.UserCharacter after_user_character = 3;
+	repeated .entity.RewardInfo expedition_reward_infos = 4;
+	repeated .entity.RewardInfo rare_reward_infos = 5;
+	repeated .entity.RewardInfo adventure_reward_infos = 6;
+	repeated .entity.CampaignInfo normal_campaign_infos = 7;
+	optional bool is_character_exp_bonus = 8;
+}

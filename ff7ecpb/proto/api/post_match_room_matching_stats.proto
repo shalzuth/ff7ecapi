@@ -1,0 +1,29 @@
+import "enums/enums_er_gen.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message RoomMatchingStats {
+	message CharacterMatchingRatesEntry {
+		optional int64 key = 1;
+		optional .enums.MatchingBusyDegree value = 2 [default = MatchingBusyDegree_None];
+	}
+
+	repeated .api.RoomMatchingStats.CharacterMatchingRatesEntry character_matching_rates = 1;
+}
+
+message PostMatchRoomMatchingStatsRequest {
+	optional .enums.MatchingTargetType matching_target_type = 1 [default = MatchingTargetType_None, (rules).enum.not_in = 0];
+}
+
+message PostMatchRoomMatchingStatsResponse {
+	message MatchingRatesEntry {
+		optional int64 key = 1;
+		optional .api.RoomMatchingStats value = 2;
+	}
+
+	repeated .api.PostMatchRoomMatchingStatsResponse.MatchingRatesEntry matching_rates = 1;
+	repeated int64 fast_matching_target_ids = 2;
+}

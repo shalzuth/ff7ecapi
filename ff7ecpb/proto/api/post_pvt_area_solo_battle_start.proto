@@ -1,0 +1,20 @@
+import "entity/battle.proto";
+import "validate/validate.proto";
+import "enums/enums_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtAreaSoloBattleStartRequest {
+	optional int64 area_battle_id = 1 [(rules).int64.gt = 0];
+	optional int64 party_id = 2 [(rules).int64.gt = 0];
+	optional .enums.StaminaBoostType stamina_boost_type = 3 [default = StaminaBoostType_None];
+	optional .entity.CommonBattleStartInput battle_start_input = 4;
+}
+
+message PostPvtAreaSoloBattleStartResponse {
+	repeated .entity.BattleWaveInfo battle_wave_infos = 1 [(rules).repeated.min_items = 1];
+	optional .entity.RareWaveInfo rare_wave_info = 2;
+	optional int64 entry_count = 3;
+}

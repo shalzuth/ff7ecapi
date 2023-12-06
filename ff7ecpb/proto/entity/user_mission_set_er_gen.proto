@@ -1,0 +1,22 @@
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserMissionSet {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional int64 mission_set_id = 2 [(client).primary = true, (client).primary_key_order = 1, (client).relation_table_name = "m_mission_set", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 achieved_mission_set_idx_flags0 = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 achieved_mission_set_idx_flags1 = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 achieved_mission_set_idx_flags2 = 5 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 achieved_mission_set_idx_flags3 = 6 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 received_mission_set_idx_flags0 = 7 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 received_mission_set_idx_flags1 = 8 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 received_mission_set_idx_flags2 = 9 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 received_mission_set_idx_flags3 = 10 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 notified_mission_set_idx_flags0 = 11 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 notified_mission_set_idx_flags1 = 12 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 notified_mission_set_idx_flags2 = 13 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 notified_mission_set_idx_flags3 = 14 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

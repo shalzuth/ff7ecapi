@@ -1,0 +1,13 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtRecoveryStoneRequest {
+	optional int64 recovery_stone_id = 1 [(rules).int64.gt = 0];
+	optional int64 current_recovery_count = 2 [(rules).int64.gte = 0];
+}
+
+message PostPvtRecoveryStoneResponse {
+}

@@ -1,0 +1,18 @@
+import "validate/validate.proto";
+import "enums/enums_er_gen.proto";
+import "entity/party.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtDungeonStoryRestartRequest {
+	optional int64 episode_id = 1 [(rules).int64.gt = 0];
+	optional .enums.StoryModeType story_mode_type = 2 [default = StoryModeType_None, (rules).enum.not_in = 0];
+	optional int64 entry_count = 3 [(rules).int64.gt = 0];
+	optional int64 party_id = 4 [(rules).int64.gt = 0];
+	optional .entity.PartyInfo party_info = 5;
+}
+
+message PostPvtDungeonStoryRestartResponse {
+}

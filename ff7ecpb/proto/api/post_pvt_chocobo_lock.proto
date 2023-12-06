@@ -1,0 +1,17 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtChocoboLockRequest {
+	message ChocoboLockMapEntry {
+		optional int64 key = 1;
+		optional bool value = 2;
+	}
+
+	repeated .api.PostPvtChocoboLockRequest.ChocoboLockMapEntry chocobo_lock_map = 1 [(rules).map.min_pairs = 1];
+}
+
+message PostPvtChocoboLockResponse {
+}

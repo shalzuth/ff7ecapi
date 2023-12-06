@@ -1,0 +1,17 @@
+import "validate/validate.proto";
+import "entity/common.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtGiftOpenRequest {
+	repeated int64 user_gift_id_list = 1 [(rules).repeated.min_items = 1, (rules).repeated.unique = true];
+}
+
+message PostPvtGiftOpenResponse {
+	repeated .entity.RewardInfo reward_info_list = 1;
+	optional bool is_expire = 2;
+	optional bool is_limit = 3;
+	optional int64 gift_count = 4;
+}

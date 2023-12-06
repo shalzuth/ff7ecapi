@@ -1,0 +1,16 @@
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserProfile {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional string name = 2 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional string message = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 top_honor_id = 4 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_honor", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 bottom_honor_id = 5 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_honor", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 background_honor_id = 6 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_honor", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional int64 icon_honor_id = 7 [(client).primary = false, (client).primary_key_order = 4294967295, (client).relation_table_name = "m_honor", (client).relation_column_name = "id", (client).relation_column_type = "long"];
+	optional bool is_show_character_rank = 8 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

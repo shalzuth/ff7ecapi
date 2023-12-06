@@ -1,0 +1,35 @@
+import "enums/enums_er_gen.proto";
+import "option/option.proto";
+
+package entity;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/entity";
+
+message UserAnotherDungeonSave {
+	optional int64 user_id = 1 [(client).primary = true, (client).primary_key_order = 0];
+	optional .enums.DungeonType dungeon_type = 2 [default = DungeonType_None];
+	optional int64 boss_enhance_stage = 3 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_atb_cost = 4 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_boss_count = 5 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional bool is_ban_skill = 6 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional bool is_ex_boss = 7 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_death_count_score = 8 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_max_blow_damage_score = 9 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_taken_damage_score = 10 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_battle_time_score = 11 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_over_kill_damage_score = 12 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_weak_element_hit_count_score = 13 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_notes_break_count_score = 14 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 unselected_dungeon_buff_debuff_select_id = 15 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional string instant_item_info = 16 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional string buff_debuff_info = 17 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 another_battle_idx_flag = 18 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional .enums.BattleRankType min_battle_rank_type = 19 [default = BattleRankType_None];
+	optional int64 max_battle_time_sec = 20 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_death_count = 21 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 max_blow_damage = 22 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 total_weak_element_damage = 23 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional bool is_used_skill_heal_type = 24 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional string dungeon_mission_info = 25 [(client).primary = false, (client).primary_key_order = 4294967295];
+	optional int64 rank_s_idx_flag = 26 [(client).primary = false, (client).primary_key_order = 4294967295];
+}

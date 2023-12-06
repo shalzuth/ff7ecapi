@@ -1,0 +1,19 @@
+import "entity/chocobo.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtChocoboExpeditionResultRequest {
+	repeated int64 expedition_deck_ids = 1 [(rules).repeated.min_items = 1, (rules).repeated.unique = true, (rules).repeated.items.int64.gt = 0];
+}
+
+message PostPvtChocoboExpeditionResultResponse {
+	message ChocoboExpeditionResultMapEntry {
+		optional int64 key = 1;
+		optional .entity.ChocoboExpeditionResult value = 2;
+	}
+
+	repeated .api.PostPvtChocoboExpeditionResultResponse.ChocoboExpeditionResultMapEntry chocobo_expedition_result_map = 1;
+}

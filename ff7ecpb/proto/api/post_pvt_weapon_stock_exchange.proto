@@ -1,0 +1,20 @@
+import "validate/validate.proto";
+import "entity/common.proto";
+import "enums/enums_er_gen.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtWeaponStockExchangeRequest {
+	repeated .api.ExchangeWeaponInfo exchange_weapon_info_list = 1 [(rules).repeated.min_items = 1];
+}
+
+message ExchangeWeaponInfo {
+	optional int64 weapon_id = 1 [(rules).int64.gt = 0];
+	repeated .enums.RarityType rarity_type_list = 2 [(rules).repeated.min_items = 1, (rules).repeated.unique = true];
+}
+
+message PostPvtWeaponStockExchangeResponse {
+	repeated .entity.RewardInfo reward_info_list = 1;
+}

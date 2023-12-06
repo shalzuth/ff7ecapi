@@ -1,0 +1,15 @@
+import "validate/validate.proto";
+import "entity/common.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtProfileGetRequest {
+	optional string display_user_id = 1 [(rules).string.len = 13];
+}
+
+message PostPvtProfileGetResponse {
+	optional .entity.UserProfileInfo profile_info = 1;
+	optional int64 friend_count = 2;
+}

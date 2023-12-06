@@ -1,0 +1,29 @@
+import "entity/battle.proto";
+import "entity/common.proto";
+import "enums/enums_er_gen.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtAreaSoloBattleEndRequest {
+	optional int64 area_battle_id = 1 [(rules).int64.gt = 0];
+	optional int64 entry_count = 2 [(rules).int64.gt = 0];
+	optional .enums.BattleResultType battle_result_type = 3 [default = BattleResultType_None, (rules).enum.not_in = 0];
+	optional .entity.BattleInput battle_input = 4 [(rules).message.required = true];
+	repeated .entity.BattleEnemyResult battle_enemy_results = 5 [(rules).repeated.min_items = 1];
+}
+
+message PostPvtAreaSoloBattleEndResponse {
+	optional .entity.BattleResult battle_result = 1;
+	optional .entity.BattleScoreResult score_result = 2;
+	optional int64 before_exp = 3;
+	optional int64 after_exp = 4;
+	repeated .api.AreaSoloBattleBoostResult boost_result = 5;
+}
+
+message AreaSoloBattleBoostResult {
+	repeated .entity.RewardInfo reward_infos = 1;
+	repeated .entity.RewardInfo rare_enemy_reward_infos = 2;
+}

@@ -1,0 +1,10 @@
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtBridgeBackupRequest {
+}
+
+message PostPvtBridgeBackupResponse {
+	optional string backup_token = 2;
+}

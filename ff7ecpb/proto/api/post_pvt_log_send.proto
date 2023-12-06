@@ -1,0 +1,13 @@
+import "entity/log_dive_log_gen.proto";
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtLogSendRequest {
+	optional .entity.Log log = 1 [(rules).message.required = true];
+}
+
+message PostPvtLogSendResponse {
+}

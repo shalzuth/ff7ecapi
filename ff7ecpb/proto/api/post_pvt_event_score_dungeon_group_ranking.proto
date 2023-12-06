@@ -1,0 +1,16 @@
+import "validate/validate.proto";
+import "entity/common.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtEventScoreDungeonGroupRankingRequest {
+	optional int64 event_score_dungeon_id = 1 [(rules).int64.gt = 0];
+	optional int64 start_rank = 2 [(rules).int64.gt = 0];
+}
+
+message PostPvtEventScoreDungeonGroupRankingResponse {
+	repeated .entity.RankingUserInfo ranking_user_infos = 1;
+	optional int64 max_rank = 2;
+}

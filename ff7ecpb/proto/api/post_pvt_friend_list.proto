@@ -1,0 +1,12 @@
+import "entity/common.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtFriendListRequest {
+}
+
+message PostPvtFriendListResponse {
+	repeated .entity.UserListInfo user_list_infos = 1;
+}

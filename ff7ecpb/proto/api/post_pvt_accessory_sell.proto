@@ -1,0 +1,13 @@
+import "validate/validate.proto";
+
+package api;
+
+option go_package = "github.com/applibot-command/command-server/game/pkg/handler/proto/api";
+
+message PostPvtAccessorySellRequest {
+	repeated int64 user_accessory_id_list = 1 [(rules).repeated.min_items = 1, (rules).repeated.unique = true];
+}
+
+message PostPvtAccessorySellResponse {
+	optional int64 sales_gil = 1;
+}
